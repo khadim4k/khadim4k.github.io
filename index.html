@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>khadim.com</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: black;
+      color: rgb(114, 109, 109);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      padding: 30px 10%;
+    }
+
+    .header-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: white;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #FA8072;
+    }
+
+    .typewriter-wrapper {
+      height: 80px;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    .line {
+      font-size: 2rem;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #FA8072;
+      width: fit-content;
+      color: #FA8072;
+    }
+
+    .ln {
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .content-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .text-part {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .cv {
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-top: 20px;
+    }
+
+    span {
+      color: #FA8072;
+    }
+
+    .image {
+      flex-shrink: 0;
+      width: 250px;
+      text-align: center;
+    }
+
+    .image img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    h3 {
+      color: white;
+      margin-top: 40px;
+    }
+
+    .snap, .ig {
+      color: #FA8072;
+      margin-left: 10px;
+    }
+
+    footer {
+      background-color: #0a0a0a;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .header-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image {
+        width: 80%;
+        margin-top: 20px;
+      }
+
+      .snap, .ig {
+        display: block;
+        margin-left: 0;
+        margin-top: 10px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-wrapper">
+      <h2>Khadim.</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Mes créations :</a></li>
+          <li><a href="codecol.html" target="_blank">Générateur de code couleur</a></li>
+          <li><a href="gn.html" target="_blank">Formulaire de recrutement</a></li>
+          <li><a href="pr.html" target="_blank">Site de pressing</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="typewriter-wrapper">
+      <div id="line1" class="ln"></div>
+      <div id="line2" class="line"></div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="text-part">
+        <p>
+          Bienvenue dans mon portfolio,<br />
+          Depuis tout petit, passionné par tout ce qui est technologie,<br />
+          je me suis d'abord orienté en option chimie <span>"(Série F6)"</span>,<br />
+          au Lycée technique d'industrie Maurice Delafosse de Dakar.<br />
+          Nous étions seulement 16 dans cette filière.<br />
+          On y faisait de la chimie générale, chimie minérale, chimie organique et beaucoup de mathématiques.<br />
+          Pas d'histoire-géographie, uniquement des matières techniques.<br />
+          Mais au final, je me suis rendu compte que l’informatique, c’était fait pour moi.<br />
+          Je ne regrette pas du tout de m'être lancé dans ce domaine : aujourd’hui, je me retrouve à 100%.<br />
+          Ce que j’aime, c’est créer. Être audacieux, inventif, logique et rigoureux.<br />
+          Je maîtrise les bases comme <span>HTML</span>, <span>CSS</span>, <span>JavaScript</span>, <span>PHP</span>.<br />
+          Par exemple, j’ai conçu un formulaire de recrutement entièrement en JavaScript<br />
+          en m’inspirant de celui du Port Autonome de Dakar pour les candidatures spontanées.<br />
+          Je vous laisse voir par vous-même.<br />
+        </p>
+        <h1 class="cv">CV en cours...</h1>
+        <p>
+          E-mail : <span>khadim4k@gmail.com</span><br />
+          Téléphone / WhatsApp : <span><a href="https://wa.me/221784066315" style="color: #FA8072; text-decoration: none;">+221 78 406 63 15</a></span>
+        </p>
+      </div>
+      <div class="image">
+        <img src="kg.jpg" alt="Photo de Khadim" />
+      </div>
+    </div>
+
+    <h3>
+      Suivez-moi sur mes réseaux :
+      <a class="snap" href="https://www.snapchat.com/add/snboy777" target="_blank">Snapchat</a>
+      & <a class="ig" href="https://www.instagram.com/777snboy/" target="_blank">Instagram</a>
+      (Veuillez cliquer sur les liens)
+    </h3>
+  </header>
+
+  <footer>
+    <p>© Khadim Guèye - Tous droits réservés</p>
+  </footer>
+
+  <script>
+    const line1Text = "Je suis Khadim";
+    const line2Text = "Guèye";
+
+    const line1 = document.getElementById("line1");
+    const line2 = document.getElementById("line2");
+
+    let i = 0;
+    let j = 0;
+    let currentLine = 1;
+
+    function typeWriter() {
+      if (currentLine === 1) {
+        if (i <= line1Text.length) {
+          line1.textContent = line1Text.substring(0, i);
+          i++;
+          setTimeout(typeWriter, 100);
+        } else {
+          currentLine = 2;
+          setTimeout(typeWriter, 500);
+        }
+      } else if (currentLine === 2) {
+        if (j <= line2Text.length) {
+          line2.textContent = line2Text.substring(0, j);
+          j++;
+          setTimeout(typeWriter, 100);
+        } else {
+          setTimeout(() => {
+            i = j = 0;
+            line1.textContent = "";
+            line2.textContent = "";
+            currentLine = 1;
+            setTimeout(typeWriter, 800);
+          }, 2000);
+        }
+      }
+    }
+
+    typeWriter();
+  </script>
+</body>
+</html>
