@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Développement personnel - Paris Dakar</title>
+  <style>
+    :root {
+      --main-color: #e44a7d; /* Rouge Saumon */
+      --accent-color: #ffbfd7; /* Couleur plus claire pour l'accent */
+      --text-color: #ffffff; /* Texte blanc */
+      --bg-color: #000000; /* Fond noir */
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-size: 16px;
+    }
+
+    header {
+      background-color: var(--bg-color);
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    header a {
+      text-decoration: none;
+      color: var(--main-color);
+      font-weight: bold;
+      transition: 0.3s;
+      font-size: 1.1rem;
+    }
+
+    header a:hover {
+      color: var(--accent-color);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--text-color);
+      background-color: var(--main-color);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .hero button {
+      background-color: var(--bg-color);
+      color: var(--main-color);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      background-color: var(--main-color);
+      color: var(--bg-color);
+    }
+
+    .tabs {
+      background-color: var(--bg-color);
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 1000px;
+      border-radius: 10px;
+    }
+
+    .tab-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tab-buttons button {
+      background-color: var(--main-color);
+      color: var(--bg-color);
+      border: none;
+      padding: 12px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      margin: 5px;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+
+    .tab-buttons button:hover {
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .section {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .section h2 {
+      margin-bottom: 10px;
+      color: var(--main-color);
+    }
+
+    .section p {
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.5;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media screen and (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .tab-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="#">Nos solutions</a>
+  <a href="#">Conseils</a>
+  <a href="#">Notre histoire</a>
+  <a href="#">Contact</a>
+</header>
+
+<section class="hero">
+  <h1>Sortir de sa zone de confort</h1>
+  <p>Chez Pressing Paris-Dakar, on ne fait pas que laver vos vêtements. On inspire. On motive. On dépasse les limites.</p>
+  <button>Nous contacter</button>
+</section>
+
+<section class="tabs">
+  <div class="tab-buttons">
+    <button onclick="showTab('tab1')">Motivation</button>
+    <button onclick="showTab('tab2')">Confiance</button>
+    <button onclick="showTab('tab3')">Résilience</button>
+    <button onclick="showTab('tab4')">Service</button>
+  </div>
+
+  <div class="tab-content active" id="tab1">
+    <div class="section">
+      <h2>La motivation, notre moteur</h2>
+      <p>Peu importe les obstacles, nous avançons. Vous aussi. La vie est un pressing permanent : elle vous met la pression, mais vous en ressortez plus propre, plus fort, plus vous.</p>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab2">
+    <div class="section">
+      <h2>Confiance en soi</h2>
+      <p>Quand vous êtes bien dans vos vêtements, vous êtes bien dans votre tête. C’est plus qu’un service, c’est une transformation.</p>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab3">
+    <div class="section">
+      <h2>Résister, persévérer</h2>
+      <p>Malgré les difficultés, malgré les problèmes. On continue. Parce que chaque épreuve lave, repasse, renforce votre personnalité.</p>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab4">
+    <div class="section">
+      <h2>Un service avec du cœur</h2>
+      <p>Nous venons à vous. On récupère, on lave, on repasse, on livre. Mais surtout, on vous inspire à devenir la meilleure version de vous-même.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  function showTab(id) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+</script>
+
+</body>
+</html>

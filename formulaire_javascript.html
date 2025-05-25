@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Candidature Spontanée</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: black;
+      color: rgba(255, 255, 255, 0.85);
+      font-family: 'Poppins', sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
+
+    fieldset {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    legend, h2 {
+      color: white;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+    }
+
+    input[type="text"],
+    input[type="file"],
+    select,
+    textarea {
+      width: 100%;
+      max-width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #FA8072;
+      border-radius: 5px;
+      background-color: transparent;
+      color: white;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+      transform: scale(1.1);
+    }
+
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    button {
+      background-color: white;
+      color: black;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background-color: #FA8072;
+      color: white;
+    }
+
+    #confirmation {
+      display: none;
+      margin-top: 50px;
+      max-width: 500px;
+      background-color: white;
+      color: black;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media screen and (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      fieldset {
+        padding: 15px;
+      }
+
+      .radio-group {
+        flex-direction: column;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <fieldset id="form-container">
+    <legend>Accueil > Candidature Spontanée</legend>
+    <h2>CANDIDATURE SPONTANÉE</h2>
+    <form id="formulaire">
+      <label for="prenom">Prénom *</label>
+      <input type="text" id="prenom" required>
+
+      <label for="nom">Nom *</label>
+      <input type="text" id="nom" required>
+
+      <label for="specialite">Spécialité</label>
+      <select id="specialite">
+        <option>- Aucun(e) -</option>
+        <option>INFORMATIQUE</option>
+        <option>ELECTRICIEN</option>
+      </select>
+
+      <label>Civilité</label>
+      <div class="radio-group">
+        <label><input type="radio" name="civilite" value="Monsieur" required> Monsieur</label>
+        <label><input type="radio" name="civilite" value="Madame"> Madame</label>
+        <label><input type="radio" name="civilite" value="Mademoiselle"> Mademoiselle</label>
+      </div>
+
+      <label>Objet de la demande</label>
+      <div class="radio-group">
+        <label><input type="radio" name="objet" value="Emploi" required> Emploi</label>
+        <label><input type="radio" name="objet" value="Stage"> Stage</label>
+      </div>
+
+      <label for="telephone">Téléphone</label>
+      <input type="text" id="telephone">
+
+      <label for="niveau">Niveau d'études</label>
+      <select id="niveau">
+        <option>- Aucun(e) -</option>
+        <option>Licence</option>
+        <option>Master</option>
+        <option>Doctorat</option>
+      </select>
+
+      <label for="diplome">Diplôme</label>
+      <select id="diplome">
+        <option>- Aucun(e) -</option>
+        <option>Bac F6</option>
+        <option>BTS</option>
+        <option>Licence Pro</option>
+      </select>
+
+      <label for="adresse">Adresse</label>
+      <textarea id="adresse" rows="4"></textarea>
+
+      <label for="cv">CV *</label>
+      <input type="file" id="cv" required>
+
+      <label for="lettre">Lettre de motivation *</label>
+      <input type="file" id="lettre" required>
+
+      <button type="submit">SOUMETTRE</button>
+    </form>
+  </fieldset>
+
+  <div id="confirmation">
+    Merci, votre candidature a été reçue.<br>
+    Nous vous répondrons dans les plus brefs délais.
+  </div>
+
+  <script>
+    document.getElementById("formulaire").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("form-container").style.display = "none";
+      document.getElementById("confirmation").style.display = "block";
+    });
+  </script>
+</body>
+</html>

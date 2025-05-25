@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Code-couleur</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    transition: 2s;
+}
+.main{
+   width: 100%;
+   height: 100vh;
+   display: flex; 
+   justify-content: center;
+   align-items: center;
+}
+.container{
+    width: 30rem;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 40px;
+    background-color: white;
+    text-align: center;
+}
+button{
+    margin-top: 5px;
+    width: 100%;
+    background-color: black;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    display: block;
+    font-size: 45px;
+}
+
+    </style>
+    <div class="main">
+        <div class="container">
+        <h2 id="codecouleur">#fff</h2>
+        <button id="btn">Click me</button>
+        </div>
+    
+    </div>
+    <script>
+        const getcolor = () => {
+            const randomNumber  =Math.floor(Math.random() * 16777215);
+            const randomCode = "#" +randomNumber.toString(16);
+            console.log(randomNumber, randomCode)
+            document.body.style.backgroundColor = randomCode;
+            document.getElementById("codecouleur").innerText = randomCode;
+            navigator.clipboard.writeText(randomCode
+            )
+        }
+        document.getElementById("btn").addEventListener(
+        "click",
+        getcolor
+    )
+    getcolor();
+    </script>
+</body>
+</html>

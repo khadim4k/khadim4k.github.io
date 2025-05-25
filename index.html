@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khadim Guèye - Développeur Front-end | Portfolio</title>
+  <meta name="description" content="Portfolio de Khadim Guèye, développeur front-end passionné basé à Dakar. Découvrez mes projets, compétences en HTML, CSS, JavaScript, PHP, et plus.">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+  body {
+    font-family: 'Poppins', sans-serif; /* Police globale */
+    margin: 0;
+    padding: 0;
+    background-color: black; /* Fond principal du body/main en noir */
+    color: rgb(190, 190, 190); /* Couleur de texte par défaut plus claire */
+    scroll-behavior: smooth;
+  }
+  h2 {
+    font-weight: 600;
+    color: rgb(182, 172, 172);
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+  }
+  .center-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .section {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  .contact-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+  }
+  .contact-item a { /* Modifié pour appliquer la couleur d'accent directement */
+    color: #FA8072;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+    header {
+      background-color: #0D0D0D; /* Fond plus foncé pour le header */
+      padding: 30px 10%;
+      color: white; /* Assurer la lisibilité du texte du header */
+      position: sticky; /* Pour que le header reste visible au scroll si souhaité */
+      top: 0;
+      z-index: 100; /* Pour être au-dessus du contenu lors du scroll */
+    }
+    .header-wrapper {
+      display: flex;
+      justify-content: space-between; /* Aligne le logo à gauche et la nav à droite */
+      align-items: center;
+      /* flex-wrap: wrap; /* Envisagez de le supprimer pour éviter le retour à la ligne sur desktop */
+      /* margin-bottom: 30px; /* Cette marge est probablement gérée par le padding du header */
+    }    
+    h2.logo {
+      color: white;
+      font-weight: 700;
+      /* margin-right: auto; /* Plus nécessaire avec justify-content sur le parent */
+      font-size: 2rem;
+      cursor: default;
+    }
+   
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem; /* Add padding for better click area */
+      display: inline-flex; /* Pour aligner icône et texte */
+      align-items: center; /* Alignement vertical */
+    }
+    nav ul li a i {
+      margin-right: 8px; /* Espace entre l'icône et le texte */
+    }
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      /* font-size: 2rem; /* Non nécessaire si on utilise des divs pour les lignes */
+      /* color: white; /* Non nécessaire, background-color sur .line */
+      flex-direction: column;
+      font-size: 2rem;
+      color: white;
+    }
+    .menu-icon .line {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+    .menu-icon.active .line:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .menu-icon.active .line:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-icon.active .line:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+    nav ul li a:hover {
+      color: #FA8072;
+    }
+    nav ul li:last-child a {
+      padding-right: 0; /* Aligne le texte du dernier lien au bord droit du conteneur nav */
+    }
+
+    .image-container {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .image-container img {
+      width: 280px;
+      height: auto;
+      border-radius: 10px;
+      display: inline-block;
+      margin-bottom: 20px;
+      border: none;
+    }
+    h1.typewriter-text { /* Changé en h1 */
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      color: white;
+      margin-bottom: 15px;
+      word-wrap: break-word;
+    }
+    @keyframes blink-caret {
+      from, to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: #FA8072; /* Couleur du curseur */
+      }
+    }
+    .developer-title { /* Ceci est un <p> maintenant */
+      color: white;
+      font-weight: 600;
+      font-size: 1.3rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .socials {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .socials a {
+      color: #FA8072;
+      margin: 0 12px;
+      font-size: 2rem;
+      transition: color 0.3s;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+    .socials a:hover {
+      color: white;
+    }
+    main section { /* Styles pour les sections dans main */
+      padding: 60px 10%;
+      color: white;
+    }
+    /* Add specific style for the hero section to center its content */
+    section#hero {
+        text-align: center; /* Center inline-block children like the CV button */
+    }
+    main section > h2, /* Styles pour les titres de section h2 */
+    section > h2 { /* Pour les h2 directement enfants de section (comme contact, a-propos) */
+      color: #FA8072;
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 1.8rem; /* Taille cohérente pour les titres de section */
+      font-weight: 700;
+    }
+
+    /* Compétences */
+    .competences {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 40px;
+      margin-bottom: 60px;
+    }
+    .competence-item {
+      background: #111;
+      border: 2px solid #FA8072;
+      border-radius: 12px;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 0 10px #FA8072;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .competence-item:hover {
+      transform: scale(1.1);
+    }
+    .competence-icon {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #FA8072;
+    }
+
+    /* Projets */
+    .projet-block {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+    .projet-block img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      border: 2px solid #FA8072;
+      box-shadow: 0 0 10px #FA8072;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .projet-block img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Commentaires reçus */
+    #commentaires {
+      margin-top: 60px;
+      text-align: center;
+    }
+    .commentaires-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 30px;
+    }
+    .commentaire {
+      background: #111;
+      border: 2px solid #FA8072;
+      border-radius: 15px;
+      width: 280px;
+      padding: 20px;
+      color: white;
+      box-shadow: 0 0 12px #FA8072;
+      text-align: left;
+      position: relative;
+    }
+    .commentaire .profil-pic {
+      width: 60px;
+      height: 60px;
+      background-color: white;
+      border-radius: 50%;
+      position: absolute;
+      top: -30px;
+      left: 20px;
+      border: 3px solid #FA8072;
+    }
+    .commentaire p {
+      margin-top: 40px;
+      font-size: 1.1rem;
+      font-style: italic;
+    }
+
+    footer {
+      background-color: #080808; /* Fond encore plus foncé pour le footer */
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 80px;
+      color: rgb(114, 109, 109);
+      border-top: 1px solid #FA8072;
+    }
+
+    /* Styles pour le bouton cssbuttons-io from Uiverse.io by adamgiebl */
+    .cssbuttons-io {
+      position: relative;
+      font-family: inherit; /* Hérite de 'Poppins' */
+      font-weight: 500;
+      font-size: 1rem; /* Ajusté pour correspondre à la taille précédente */
+      letter-spacing: 0.05em;
+      border-radius: 0.8em;
+      cursor: pointer;
+      border: none;
+      background: #FA8072; /* Couleur d'accent par défaut, plus visible */
+      color: black; /* Texte noir pour contraste sur fond clair */
+      overflow: hidden;
+      text-decoration: none !important; /* Pour les balises <a> */
+      display: inline-block; /* Pour que l'<a> se comporte comme un bouton */
+      margin-top: 15px; /* Espace par rapport à l'image ou au <br> */
+    }
+
+    .cssbuttons-io svg {
+      width: 1.2em;
+      height: 1.2em;
+      margin-right: 0.5em;
+    }
+
+    .cssbuttons-io span {
+      position: relative;
+      z-index: 10;
+      transition: color 0.4s;
+      display: inline-flex;
+      align-items: center;
+      padding: 0.8em 1.2em 0.8em 1.05em;
+    }
+
+    .cssbuttons-io::before,
+    .cssbuttons-io::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .cssbuttons-io::before {
+      content: "";
+      background: #dd9090; /* Fond noir pour l'effet de survol, pour contraster avec le texte blanc */
+      width: 120%;
+      left: -10%;
+      transform: skew(30deg);
+      transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    }
+
+    .cssbuttons-io:hover::before {
+      transform: translate3d(100%, 0, 0);
+    }
+
+    .cssbuttons-io:hover span {
+      color: ghostwhite; /* Assure que le texte devient blanc sur le fond noir au survol */
+    }
+
+    .cssbuttons-io:active {
+      transform: scale(0.95);
+    }
+
+    .footer-socials {
+      margin-bottom: 15px;
+    }
+    .footer-socials a {
+      color: #FA8072;
+      margin: 0 10px;
+      font-size: 1.5rem; /* Taille ajustée pour le footer */
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+    .footer-socials a:hover {
+      color: white;
+    }
+
+    footer p a { /* Ajout d'une règle pour les liens dans les paragraphes du footer */
+      color: #FA8072;
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      header {
+        padding: 20px 5%;
+      }
+      .header-wrapper {
+        flex-direction: row; /* Logo à gauche, burger à droite */
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0; /* Pas de marge en bas si le menu est un overlay */
+      }
+      h2.logo {
+        margin-right: 0;
+        font-size: 1.8rem; /* Ajuster la taille du logo sur mobile */
+      }
+      nav ul {
+        display: none; /* Caché par défaut sur mobile */
+        flex-direction: column;
+        /* align-items: center; /* Changé pour aligner le texte à gauche */
+        position: absolute; /* Changé de fixed à absolute */
+        top: 100%; /* Se positionne juste en dessous du header */
+        left: 0;
+        width: 100%;
+        height: auto; /* Hauteur automatique en fonction du contenu */
+        background-color: #0D0D0D; /* Fond similaire au header, ou #1A1A1A pour une légère distinction */
+        /* padding-top: 80px; /* Supprimé, géré par le padding interne */
+        padding: 10px 0; /* Léger padding vertical pour le conteneur des liens */
+        z-index: 999; /* En dessous du menu-icon (1001) mais au-dessus du contenu principal */
+        margin-top: 0;
+        /* order: 0; /* Non nécessaire ici */
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.3); /* Ombre pour l'effet déroulant */
+        border-top: 1px solid #222; /* Séparateur subtil avec le header */
+      }
+      nav ul.active {
+        display: flex; /* Afficher quand actif */
+      }
+      nav ul li {
+        margin-bottom: 0; /* Supprimé, l'espacement sera dans le padding du lien */
+        width: 100%; /* Les éléments de liste prennent toute la largeur */
+      }
+      nav ul li a {
+        font-size: 1.2rem; /* Taille de police ajustée pour le menu déroulant */
+        padding: 12px 5%; /* Padding interne des liens, aligné sur le padding horizontal du header */
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left; /* Texte des liens aligné à gauche */
+      }
+      .menu-icon {
+        display: flex; /* Afficher l'icône burger */
+        z-index: 1001; /* Au-dessus de l'overlay du menu */
+        /* margin-left: 20px; /* Supprimé, géré par space-between */
+        /* gap: 0; /* Supprimé */
+      }
+      .image-container img {
+        width: 80%; /* Scale image width */
+        max-width: 280px; /* Maintain a reasonable max-width */
+      }
+      .competences {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 15px;
+        flex-wrap: wrap; /* Assurer le retour à la ligne des compétences si l'espace manque */
+      }
+      .competence-item {
+        width: 100px;
+        height: 100px;
+        font-size: 1rem;
+      }
+      .competence-icon {
+        font-size: 2.5rem;
+      }
+      .commentaires-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+      .commentaires-wrapper .commentaire { /* S'assurer que les commentaires ne débordent pas */
+        max-width: 100%; /* Permet au commentaire de rétrécir si nécessaire */
+        box-sizing: border-box; /* Inclut padding et border dans la largeur/hauteur totale */
+      }
+      main section {
+        padding: 30px 5%; /* Reduce padding */
+      }
+      p {
+        font-size: 14px; /* Adjust font-size */
+      }
+      .projet-block img {
+        max-width: 300px; /* Adjust project image size */
+      }
+      h1.typewriter-text {
+        font-size: 1.5rem; /* Adjust typewriter text size */
+      }
+      .socials {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 190px; /* Permet 4 icônes (environ 4*45px = 180px), force le 5ème à la ligne */
+        margin-bottom: 40px; /* Marge inférieure réduite sur mobile */
+      }
+      .socials a {
+        font-size: 1.8rem; /* Icônes légèrement plus petites sur mobile */
+        margin: 0 8px;   /* Marge horizontale réduite entre les icônes */
+      }
+    }
+    /* Style pour le paragraphe de la section "À propos" */
+    section#a-propos p {
+      color: #e0dddd;
+    }
+    /* Style pour les spans (mots-clés) dans la section "À propos" */
+    section#a-propos p span {
+      color: #FA8072;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+   <div class="header-wrapper">
+      <h2 class="logo">Khadim</h2>
+      <nav>
+        <ul id="nav-list">
+          <li><a href="#hero"><i class='bx bxs-home-smile'></i>Accueil</a></li>
+          <li><a href="#projets"><i class='bx bxs-briefcase-alt-2'></i>Mes projets</a></li>
+          <li><a href="#contact"><i class='bx bxs-contact'></i>Contact</a></li>
+          <li><a href="#a-propos"><i class='bx bxs-user-detail'></i>À propos</a></li>
+          <li><a href="Cv.khadim.pdf.pdf" target="_blank" rel="noopener"><i class='bx bxs-file-pdf'></i>CV</a></li>
+        </ul>
+      </nav>
+      <div class="menu-icon" aria-label="Menu" role="button" tabindex="0">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero">
+    <div class="image-container">
+      <img src="kg.jpg" alt="Photo de Khadim" />
+    </div>
+
+    <h1 class="typewriter-text"><span id="typed-text"></span></h1>
+
+    <p class="developer-title">Développeur Front-end</p>
+
+    <!-- Bouton CV ajouté ici -->
+    <a href="Cv.khadim.pdf.pdf" target="_blank" rel="noopener" class="cssbuttons-io" style="margin-bottom: 40px;"> <!-- Ajout de margin-bottom pour espacement avant les icônes sociales -->
+      <span>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z" fill="currentColor"></path>
+        </svg>
+        Voir mon CV
+      </span>
+    </a>
+
+    <div class="socials" aria-label="Réseaux sociaux">
+      <a href="https://www.linkedin.com/in/khadim-gu%C3%A8ye-93274b364?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" aria-label="LinkedIn" class='bx bxl-linkedin'></a>
+      <a href="https://github.com/khadim4k" target="_blank" aria-label="GitHub" class='bx bxl-github'></a>
+      <a href="https://www.instagram.com/777snboy/" target="_blank" aria-label="Instagram" class='bx bxl-instagram'></a>
+      <a href="https://www.snapchat.com/add/snboy777" target="_blank" aria-label="Snapchat" class='bx bxl-snapchat'></a>
+      <a href="https://www.tiktok.com/@777snboy" target="_blank" aria-label="TikTok" class='bx bxl-tiktok'></a>
+      <a href="https://x.com/777snboy" target="_blank" aria-label="Twitter" class='bx bxl-twitter'></a>
+      <a href="https://youtube.com/@777snboy?si=fz_lh1BvQ6GeZNQ8" target="_blank" aria-label="YouTube" class='bx bxl-youtube'></a>
+    </div>
+  </section>
+
+  <section id="competences">
+    <h2>💻 Compétences</h2>
+    <div class="competences">
+      <div class="competence-item" title="HTML">
+        <i class='bx bxl-html5 competence-icon'></i>
+        HTML
+      </div>
+      <div class="competence-item" title="CSS">
+        <i class='bx bxl-css3 competence-icon'></i>
+        CSS
+      </div>
+      <div class="competence-item" title="JavaScript">
+        <i class='bx bxl-javascript competence-icon'></i>
+        JavaScript
+      </div>
+      <div class="competence-item" title="Linux (General)">
+        <i class='bx bxl-tux competence-icon'></i> 
+        Linux
+      </div>
+      <div class="competence-item" title="Kali Linux">
+        <i class='bx bxs-terminal competence-icon'></i> <!-- Icône Terminal pour Kali Linux -->
+        Kali linux
+      </div>
+      <div class="competence-item" title="PHP">
+        <i class='bx bxl-php competence-icon'></i>
+        PHP
+      </div>
+      <div class="competence-item" title="GitHub">
+        <i class='bx bxl-github competence-icon'></i>
+        GitHub
+      </div>
+       <div class="competence-item" title="Python">
+        <i class='bx bxl-python competence-icon'></i>
+        Python
+      </div>
+       <div class="competence-item" title="Figma">
+        <i class='bx bxl-figma competence-icon'></i>
+        Figma
+      </div>
+      <div class="competence-item" title="PowerAMC">
+        <i class='bx bxs-cog competence-icon'></i> <!-- Icône générique pour PowerAMC -->
+        PowerAMC
+      </div>
+      <div class="competence-item" title="MySQL">
+        <i class='bx bxs-data competence-icon'></i> <!-- Icône de base de données pour MySQL -->
+        MySQL
+      </div>
+      <div class="competence-item" title="VS Code">
+        <i class='bx bxl-visual-studio competence-icon'></i> <!-- Icône Visual Studio pour VS Code -->
+        VS Code
+      </div>
+    </div>
+  </section>
+
+  <section id="projets">
+    <h2>📂 Mes projets</h2>
+
+    <div class="projet-block">
+      <a href="code_couleur.html" target="_blank" title="Voir portfolio">
+        <img src="codecol.png" alt="Portfolio Khadim" />
+      </a><br/>
+      <!-- From Uiverse.io by adamgiebl -->
+      <a href="code_couleur.html" target="_blank" class="cssbuttons-io">
+        <span>
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z" fill="currentColor"></path>
+          </svg>
+          Générateur de code couleur
+        </span>
+      </a>
+    </div>
+
+    <div class="projet-block">
+      <a href="formulaire_javascript.html" target="_blank" title="Voir copier-coller">
+        <img src="frs.png" alt="Copier Coller App" />
+      </a><br/>
+      <!-- From Uiverse.io by adamgiebl -->
+      <a href="formulaire_javascript.html" target="_blank" class="cssbuttons-io">
+        <span>
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z" fill="currentColor"></path>
+          </svg>
+          Formulaire javascript
+        </span>
+      </a>
+    </div>
+
+    <div class="projet-block">
+      <a href="site_pressing.html" target="_blank" title="Voir gestion RH">
+        <img src="pressing.png" alt="Gestion RH" />
+      </a><br/>
+      <!-- From Uiverse.io by adamgiebl -->
+      <a href="site_pressing.html" target="_blank" class="cssbuttons-io">
+        <span>
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z" fill="currentColor"></path>
+          </svg>
+          Site de pressing
+        </span>
+      </a>
+    </div>
+  </section>
+  <section id="contact" class="section">
+  <h2>Envie de me contacter ?</h2> <!-- Style géré par CSS main section > h2 -->
+  <p>N'hésitez pas à m'écrire ou à m'appeler. Je suis disponible et à l'écoute de vos projets !</p>
+
+  <div class="contact-box">
+    <div class="contact-item">
+       <i class='bx bxl-gmail'></i>
+      <a href="mailto:khadim4k@gmail.com">khadim4k@gmail.com</a>
+    </div>
+    <div class="contact-item">
+      <i class='bx bxl-whatsapp'></i>
+  <a href="https://wa.me/+221784066315" target="_blank">+221 78 406 63 15</a>
+    </div>
+  </div>
+</section>
+<section id="a-propos" class="section" >
+  <h2>À propos de moi</h2> <!-- Style géré par CSS main section > h2 -->
+  <p>
+    Bienvenue dans mon portfolio,
+Depuis tout petit, passionné par tout ce qui est technologie,<br>
+je me suis d'abord orienté en <span> chimie "(Série F6)"</span>,<br>
+au <span>Lycée technique d'industrie Maurice Delafosse de Dakar</span>.<br>
+Nous étions seulement 16 dans cette filière.<br>
+On y faisait de la chimie générale, chimie minérale, chimie organique et beaucoup de mathématiques.<br>
+Pas d'histoire-géographie, uniquement des matières techniques.<br>
+Mais au final, je me suis rendu compte que l’informatique, c’était fait pour moi.<br> 
+Je ne regrette pas du tout de m'être lancé dans ce domaine : aujourd’hui, je me retrouve à 100%.<br>
+Ce que j’aime, c’est créer. Être audacieux, inventif, logique et rigoureux.<br>
+Je maîtrise les bases comme <span>HTML</span>, <span>CSS</span>,<span>Javascript</span>, et <span>PHP</span>.<br>
+Par exemple, j’ai conçu un formulaire de recrutement entièrement en JavaScript<br>
+en m’inspirant de celui du Port Autonome de Dakar pour les candidatures spontanées.
+Je vous laisse voir par vous-même.
+  </p>
+</section>
+
+  <section id="commentaires">
+    <h2>💬 Commentaires reçus</h2>
+    <div class="commentaires-wrapper">
+
+      <div class="commentaire">
+      
+        <p>« Ton portfolio est très responsive»</p>
+      </div>
+
+      <div class="commentaire">
+       
+        <p>«J'aime bien !»</p>
+      </div>
+
+      <div class="commentaire">
+        
+        <p>« Intéressant »</p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+  <footer>
+    <div class="footer-socials" aria-label="Réseaux sociaux">
+      <a href="https://www.linkedin.com/in/khadim-gu%C3%A8ye-93274b364?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" aria-label="LinkedIn" class='bx bxl-linkedin'></a>
+      <a href="https://github.com/khadim4k" target="_blank" aria-label="GitHub" class='bx bxl-github'></a>
+      <a href="https://www.instagram.com/777snboy/" target="_blank" aria-label="Instagram" class='bx bxl-instagram'></a>
+      <a href="https://www.snapchat.com/add/snboy777" target="_blank" aria-label="Snapchat" class='bx bxl-snapchat'></a>
+      <a href="https://wa.me/+221784066315" target="_blank" aria-label="WhatsApp" class='bx bxl-whatsapp'></a>
+      <a href="mailto:khadim4k@gmail.com" aria-label="Email" class='bx bxl-gmail'></a>
+    </div>
+    <p>
+      <a href="mailto:khadim4k@gmail.com">khadim4k@gmail.com</a> | 
+      <a href="https://wa.me/+221784066315" target="_blank">+221 78 406 63 15</a>
+    </p>
+    <p>&copy; 2025 Khadim Guèye - Tous droits réservés</p>
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>const text = "Je suis Khadim Guèye";
+const typedText = document.getElementById("typed-text");
+let index = 0;
+
+function type() {
+  if (index < text.length) {
+    typedText.innerHTML += text.charAt(index);
+    index++;
+    setTimeout(type, 100);
+  }
+}
+
+type();
+
+const menuIcon = document.querySelector('.menu-icon');
+const navList = document.getElementById('nav-list');
+
+if (menuIcon && navList) {
+  menuIcon.addEventListener('click', () => {
+    navList.classList.toggle('active');
+    menuIcon.classList.toggle('active'); // Pour animer l'icône burger en croix
+  });
+
+  // Fermer le menu mobile lorsqu'un lien est cliqué
+  const navLinks = navList.querySelectorAll('a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navList.classList.contains('active')) { // Vérifie si le menu est ouvert
+        navList.classList.remove('active');
+        menuIcon.classList.remove('active');
+      }
+    });
+  });
+}
+</script>
+</body>
+</html>
