@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khadim Guèye - Développeur Front-end | Portfolio</title>
   <meta name="description" content="Portfolio de Khadim Guèye, développeur front-end passionné basé à Dakar. Découvrez mes projets, compétences en HTML, CSS, JavaScript, PHP, et plus.">
+  <meta name="keywords" content="HTML, CSS, JavaScript, PHP, Développeur Web, Front-end, Portfolio, Khadim Gueye, Dakar">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
@@ -95,6 +96,10 @@
       display: inline-flex; /* Pour aligner icône et texte */
       align-items: center; /* Alignement vertical */
     }
+   .header-wrapper nav {
+  margin-left: auto;
+}
+ 
     nav ul li a i {
       margin-right: 8px; /* Espace entre l'icône et le texte */
     }
@@ -308,7 +313,7 @@
       font-size: 1rem; /* Ajusté pour correspondre à la taille précédente */
       letter-spacing: 0.05em;
       border-radius: 0.8em;
-      cursor: pointer;
+      cursor: pointer; 
       border: none;
       background: #FA8072; /* Couleur d'accent par défaut, plus visible */
       color: black; /* Texte noir pour contraste sur fond clair */
@@ -316,6 +321,8 @@
       text-decoration: none !important; /* Pour les balises <a> */
       display: inline-block; /* Pour que l'<a> se comporte comme un bouton */
       margin-top: 15px; /* Espace par rapport à l'image ou au <br> */
+      /* Suggestion pour améliorer le contraste */
+      background: #FFB2A3; /* Fond saumon plus clair pour contraste 4.59:1 avec texte noir */
     }
 
     .cssbuttons-io svg {
@@ -345,7 +352,8 @@
 
     .cssbuttons-io::before {
       content: "";
-      background: #dd9090; /* Fond noir pour l'effet de survol, pour contraster avec le texte blanc */
+      /* background: #dd9090; /* Ancien fond rose clair pour l'effet de survol */
+      background: #ee7171; /* Fond sombre pour l'effet de survol, contraste élevé avec texte blanc */
       width: 120%;
       left: -10%;
       transform: skew(30deg);
@@ -606,10 +614,25 @@
 
   <section id="projets">
     <h2>📂 Mes projets</h2>
+     <div class="projet-block">
+      <a href="https://qcm-sn.ct.ws/index.php" target="_blank" title="Voir le projet QCM">
+        <img src="qcm.png" alt="Aperçu du projet site de QCM pour étudiants" />
+      </a><br/>
+      <!-- From Uiverse.io by adamgiebl -->
+      <a href="https://qcm-sn.ct.ws/index.php" target="_blank" class="cssbuttons-io">
+        <span>
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z" fill="currentColor"></path>
+          </svg>
+          Projet fil rouge : Site de qcm pour les étudiants de l'ESTM
+        </span>
+      </a>
+    </div>
 
     <div class="projet-block">
-      <a href="code_couleur.html" target="_blank" title="Voir portfolio">
-        <img src="codecol.png" alt="Portfolio Khadim" />
+      <a href="code_couleur.html" target="_blank" title="Voir le générateur de code couleur">
+        <img src="codecol.png" alt="Aperçu du projet générateur de code couleur" />
       </a><br/>
       <!-- From Uiverse.io by adamgiebl -->
       <a href="code_couleur.html" target="_blank" class="cssbuttons-io">
@@ -624,8 +647,8 @@
     </div>
 
     <div class="projet-block">
-      <a href="formulaire_javascript.html" target="_blank" title="Voir copier-coller">
-        <img src="frs.png" alt="Copier Coller App" />
+      <a href="formulaire_javascript.html" target="_blank" title="Voir le formulaire JavaScript">
+        <img src="frs.png" alt="Aperçu du projet formulaire de candidature en JavaScript" />
       </a><br/>
       <!-- From Uiverse.io by adamgiebl -->
       <a href="formulaire_javascript.html" target="_blank" class="cssbuttons-io">
@@ -640,8 +663,8 @@
     </div>
 
     <div class="projet-block">
-      <a href="site_pressing.html" target="_blank" title="Voir gestion RH">
-        <img src="pressing.png" alt="Gestion RH" />
+      <a href="site_pressing.html" target="_blank" title="Voir le site de pressing">
+        <img src="pressing.png" alt="Aperçu du projet site vitrine pour un pressing" />
       </a><br/>
       <!-- From Uiverse.io by adamgiebl -->
       <a href="site_pressing.html" target="_blank" class="cssbuttons-io">
