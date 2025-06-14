@@ -513,6 +513,15 @@
       color: #FA8072;
       font-weight: bold;
     }
+    /* Style pour les tags de technologie dans les descriptions de projet */
+    .tech-tag {
+      color: #FA8072; /* Couleur saumon */
+      font-weight: bold;
+      background-color: rgba(250, 128, 114, 0.1); /* Fond saumon très léger */
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em; /* Légèrement plus petit que le texte environnant */
+    }
   </style>
 </head>
 <body>
@@ -625,9 +634,9 @@
         <i class='bx bxl-java competence-icon'></i>
         Java
       </div>
-      <div class="competence-item" title="C#">
-        <i class='bx bx-code-alt competence-icon'></i> 
-        C#
+      <div class="competence-item" title="InfinityFree">
+        <i class='bx bx-cloud competence-icon'></i> 
+        InfinityFree
       </div>
     </div>
   </section>
@@ -642,7 +651,10 @@
         </a>
         <div class="projet-card-content">
           <h3>Site de QCM (ESTM)</h3>
-          <p>Projet fil rouge : Site de QCM interactif pour les étudiants de l'ESTM, facilitant les révisions et le suivi des progrès.</p>
+          <p>
+            Projet fil rouge développé en <span class="tech-tag">PHP</span> avec une base de données <span class="tech-tag">MySQL</span>. Ce site de QCM interactif est conçu pour les étudiants de l'ESTM, facilitant leurs révisions et le suivi de leurs progrès. Il est hébergé gratuitement via <span class="tech-tag">InfinityFree</span>, accessible avec le sous-domaine <code>qcm-sn</code> sur le domaine <code>.ct.ws</code>.
+            <br><em>Compte visiteur disponible :</em><br>Email: <code>visit@gmail.com</code><br>Mot de passe: <code>passer123</code>
+          </p>
           <a href="https://qcm-sn.ct.ws/index.php" target="_blank" class="btn-projet-card">Voir le projet</a>
         </div>
       </div>
@@ -653,7 +665,9 @@
         </a>
         <div class="projet-card-content">
           <h3>Générateur de Code Couleur</h3>
-          <p>Générateur de codes couleurs hexadécimaux aléatoires avec fonctionnalité de copie instantanée dans le presse-papiers.</p>
+          <p>
+            Un outil simple et fun développé en <span class="tech-tag">HTML</span>, <span class="tech-tag">CSS</span> et <span class="tech-tag">JavaScript</span>. Il génère aléatoirement des codes couleurs hexadécimaux et permet de les copier instantanément dans le presse-papiers. Parfait pour trouver l'inspiration rapidement !
+          </p>
           <a href="code_couleur.html" target="_blank" class="btn-projet-card">Voir le projet</a>
         </div>
       </div>
@@ -664,7 +678,9 @@
         </a>
         <div class="projet-card-content">
           <h3>Formulaire JavaScript</h3>
-          <p>Formulaire de candidature dynamique avec validation en JavaScript, inspiré du processus de recrutement du Port Autonome de Dakar.</p>
+          <p>
+            Ce formulaire de candidature dynamique, codé en <span class="tech-tag">HTML</span>, <span class="tech-tag">CSS</span> et <span class="tech-tag">JavaScript</span>, intègre une validation des champs côté client. Il est inspiré du processus de recrutement du Port Autonome de Dakar, offrant une expérience utilisateur fluide et interactive.
+          </p>
           <a href="formulaire_javascript.html" target="_blank" class="btn-projet-card">Voir le projet</a>
         </div>
       </div>
@@ -675,7 +691,9 @@
         </a>
         <div class="projet-card-content">
           <h3>Site Vitrine Pressing</h3>
-          <p>Site vitrine pour un service de pressing, mettant en avant une approche motivante et axée sur le développement personnel.</p>
+          <p>
+            Une page de présentation pour un service de pressing, réalisée avec <span class="tech-tag">HTML</span> et <span class="tech-tag">CSS</span> et <span class="tech-tag">Javascript</span>. Ce projet met l'accent sur un design épuré et un message motivant, liant le service de pressing au concept de développement personnel.
+          </p>
           <a href="site_pressing.html" target="_blank" class="btn-projet-card">Voir le projet</a>
         </div>
       </div>
@@ -750,7 +768,7 @@ Je vous laisse voir par vous-même.
       <a href="mailto:khadim4k@gmail.com">khadim4k@gmail.com</a> | 
       <a href="https://wa.me/+221784066315" target="_blank">+221 78 406 63 15</a>
     </p>
-    <p>&copy; 2025 Khadim Guèye - Tous droits réservés</p>
+<p>&copy; 2024 Khadim Guèye - Tous droits réservés</p> <!-- ou l'année actuelle -->
   </footer>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
