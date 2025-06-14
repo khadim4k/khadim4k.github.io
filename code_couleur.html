@@ -3,69 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Code-couleur</title>
+    <!-- <link rel="stylesheet" href="style.css"> Styles sont maintenant en ligne -->
+    <title>Générateur de Code Couleur Aléatoire</title>
+    <meta name="description" content="Générez et copiez facilement des codes couleur hexadécimaux aléatoires. Outil simple, chic et interactif pour trouver l'inspiration.">
 </head>
 <body>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-*{
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..700&family=Roboto:wght@300;400;700&display=swap');
+
+        * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
-    transition: 2s;
-}
-.main{
-   width: 100%;
-   height: 100vh;
-   display: flex; 
-   justify-content: center;
-   align-items: center;
-}
-.container{
-    width: 30rem;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 40px;
-    background-color: white;
-    text-align: center;
-}
-button{
-    margin-top: 5px;
-    width: 100%;
-    background-color: black;
-    border: none;
-    color: white;
-    border-radius: 5px;
-    display: block;
-    font-size: 45px;
-}
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            transition: background-color 0.5s ease; /* Transition plus douce */
+            background-color: #f0f0f0; /* Fond clair par défaut */
+            color: #333;
+            display: flex; /* Pour centrer .main */
+            justify-content: center; /* Pour centrer .main */
+            align-items: center; /* Pour centrer .main */
+            min-height: 100vh; /* Assure la hauteur complète de la fenêtre */
+            padding: 20px; /* Marge pour les petits écrans */
+        }
+
+        .main {
+            /* Les propriétés de centrage sont maintenant sur le body */
+        }
+
+        .container {
+            width: 100%; /* Pleine largeur sur petits écrans */
+            max-width: 25rem; /* Largeur max pour un aspect plus "chic" */
+            padding: 25px 20px; /* Espacement intérieur ajusté */
+            border-radius: 12px; /* Bords arrondis plus doux */
+            font-size: 1.5rem; /* Taille de police de base, responsive */
+            background-color: white;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Ombre plus subtile */
+        }
+
+        .container h2 { /* Titre de la section */
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem; /* Taille de titre responsive */
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        #codecouleur-display { /* Affichage du code couleur */
+            font-family: 'Roboto', monospace; /* Police monospace pour le code */
+            font-size: 2.2rem; /* Code couleur bien visible */
+            font-weight: bold;
+            color: #333;
+            padding: 10px;
+            margin-bottom: 25px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            user-select: all; /* Sélection facile du code */
+        }
+
+        button#btn-generer { /* Style du bouton */
+            margin-top: 10px;
+            /* width: 100%; */ /* Supprimé pour que le bouton ne prenne pas toute la largeur */
+            display: inline-block; /* Permet au bouton d'être centré par text-align: center du parent et d'avoir une largeur adaptée à son contenu */
+            background-color: #333; /* Bouton sombre et chic */
+            border: none;
+            color: white;
+            border-radius: 8px;
+            padding: 12px 25px; /* Espacement intérieur ajusté (vertical et horizontal) */
+            font-size: 1.1rem; /* Taille de texte légèrement ajustée */
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button#btn-generer:hover {
+            background-color: #555; /* Plus clair au survol */
+            transform: translateY(-2px);
+        }
+        button#btn-generer:active {
+            transform: translateY(0px);
+        }
+
+        #copy-feedback { /* Message de confirmation de copie */
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #FA8072; /* Couleur d'accent de votre portfolio */
+            height: 1.2em; /* Réserve l'espace pour éviter le décalage */
+            font-weight: bold;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Ajustements responsives */
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+            .container h2 {
+                font-size: 1.5rem;
+            }
+            #codecouleur-display {
+                font-size: 1.8rem; /* Code plus petit sur mobile */
+            }
+            button#btn-generer {
+                font-size: 0.95rem; /* Taille de police ajustée pour mobile */
+                padding: 10px 20px; /* Padding ajusté pour mobile */
+            }
+        }
 
     </style>
     <div class="main">
         <div class="container">
-        <h2 id="codecouleur">#fff</h2>
-        <button id="btn">Click me</button>
+            <h2>Générateur de Couleur</h2>
+            <div id="codecouleur-display">#FFFFFF</div>
+            <button id="btn-generer">Générer Couleur</button> <!-- Texte du bouton modifié -->
+            <p id="copy-feedback">&nbsp;</p> <!-- Placeholder pour le message de copie -->
         </div>
-    
     </div>
     <script>
-        const getcolor = () => {
-            const randomNumber  =Math.floor(Math.random() * 16777215);
-            const randomCode = "#" +randomNumber.toString(16);
-            console.log(randomNumber, randomCode)
+        const colorDisplay = document.getElementById("codecouleur-display");
+        const generateBtn = document.getElementById("btn-generer");
+        const copyFeedback = document.getElementById("copy-feedback");
+
+        const getColor = () => { // Renommé en camelCase standard
+            const randomNumber = Math.floor(Math.random() * 16777215);
+            const randomCode = "#" + randomNumber.toString(16).padStart(6, '0'); // Assure 6 chiffres
+
             document.body.style.backgroundColor = randomCode;
-            document.getElementById("codecouleur").innerText = randomCode;
-            navigator.clipboard.writeText(randomCode
-            )
+            colorDisplay.innerText = randomCode;
+            
+            try {
+                navigator.clipboard.writeText(randomCode).then(() => {
+                    copyFeedback.innerText = "Code " + randomCode + " copié !";
+                    copyFeedback.style.opacity = "1";
+                    setTimeout(() => {
+                        copyFeedback.style.opacity = "0";
+                        // Efface le texte après la disparition pour éviter un flash
+                        setTimeout(() => { copyFeedback.innerHTML = "&nbsp;"; }, 500); 
+                    }, 2000); // Message visible pendant 2 secondes
+                }).catch(err => {
+                    console.error("Erreur lors de la copie dans le presse-papiers : ", err);
+                    copyFeedback.innerText = "Erreur de copie.";
+                    copyFeedback.style.opacity = "1";
+                     setTimeout(() => {
+                        copyFeedback.style.opacity = "0";
+                         setTimeout(() => { copyFeedback.innerHTML = "&nbsp;"; }, 500);
+                    }, 2000);
+                });
+            } catch (err) {
+                 // Pour les navigateurs très anciens ou en contexte non sécurisé
+                 console.error("L'API Clipboard n'est pas supportée ou une erreur est survenue : ", err);
+                 copyFeedback.innerText = "Copie non supportée.";
+                 copyFeedback.style.opacity = "1";
+                 setTimeout(() => {
+                    copyFeedback.style.opacity = "0";
+                    setTimeout(() => { copyFeedback.innerHTML = "&nbsp;"; }, 500);
+                }, 2000);
+            }
         }
-        document.getElementById("btn").addEventListener(
-        "click",
-        getcolor
-    )
-    getcolor();
+
+        generateBtn.addEventListener("click", getColor);
+
+        // Générer une couleur initiale au chargement de la page
+        getColor();
     </script>
 </body>
 </html>
