@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khadim Guèye - Développeur Front-end | Portfolio</title>
   <meta name="description" content="Portfolio de Khadim Guèye, développeur front-end passionné basé à Dakar. Découvrez mes projets, compétences en HTML, CSS, JavaScript, PHP, et plus.">
-  <meta name="keywords" content="HTML, CSS, JavaScript, PHP, Développeur Web, Front-end, Portfolio, Khadim Gueye, Dakar">
+  <meta name="keywords" content="HTML, CSS, JavaScript, PHP, Développeur Web, Front-end, Portfolio, Khadim Gueye, Dakar, React">
+  <link rel="icon" type="image/jpeg" href="kg.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
@@ -58,82 +59,60 @@
     font-weight: 600;
   }
 
-    header {
+    /* Styles pour la barre de navigation Bootstrap personnalisée */
+    .navbar-custom {
       background-color: #0D0D0D; /* Fond plus foncé pour le header */
-      padding: 30px 10%;
-      color: white; /* Assurer la lisibilité du texte du header */
+      padding-top: 15px; /* Ajustement du padding vertical */
+      padding-bottom: 15px;
+    }
+
+    /* Styles pour le conteneur du header (si vous souhaitez le garder sticky) */
+    header.sticky-top {
       position: sticky; /* Pour que le header reste visible au scroll si souhaité */
       top: 0;
       z-index: 100; /* Pour être au-dessus du contenu lors du scroll */
-    }
-    .header-wrapper {
-      display: flex;
-      justify-content: space-between; /* Aligne le logo à gauche et la nav à droite */
-      align-items: center;
-      /* flex-wrap: wrap; /* Envisagez de le supprimer pour éviter le retour à la ligne sur desktop */
-      /* margin-bottom: 30px; /* Cette marge est probablement gérée par le padding du header */
     }    
-    h2.logo {
+    /* .header-left a maintenant la classe .navbar-brand ou est intégré dans .navbar-brand */
+
+    /* Styles pour les icônes dans le header (GitHub, Gmail) */
+    .header-icon-link {
       color: white;
-      font-weight: 700;
-      /* margin-right: auto; /* Plus nécessaire avec justify-content sur le parent */
-      font-size: 2rem;
-      cursor: default;
+      font-size: 1.9rem; /* Taille des icônes */
+      margin-right: 18px; /* Espace entre les icônes */
+      transition: transform 0.3s ease, color 0.3s ease;
+      display: inline-block; /* Pour que transform fonctionne correctement */
     }
-   
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
+    .header-icon-link:hover {
+      color: #FA8072; /* Couleur d'accent au survol */
+      transform: scale(1.15); /* Animation de grossissement */
     }
-    nav ul li a {
+    .header-icon-link:last-child {
+      margin-right: 0;
+    }
+    /* Suppression de l'ancien style du logo texte */
+    /* h2.logo { ... } */ 
+
+    /* Styles pour les liens de navigation Bootstrap */
+    .navbar-nav .nav-link {
       color: white;
       text-decoration: none;
       transition: color 0.3s;
       font-weight: 600;
-      font-size: 1.1rem;
-      padding: 0.5rem 1rem; /* Add padding for better click area */
+      font-size: 0.95rem; /* Taille de police réduite pour la navigation */
+      padding: 0.5rem 1rem !important; /* Padding pour une meilleure zone de clic, !important pour surcharger Bootstrap si besoin */
       display: inline-flex; /* Pour aligner icône et texte */
       align-items: center; /* Alignement vertical */
     }
-   .header-wrapper nav {
-  margin-left: auto;
-}
- 
-    nav ul li a i {
-      margin-right: 8px; /* Espace entre l'icône et le texte */
+    .navbar-nav .nav-link i {
+      margin-right: 8px;
+       /* Espace entre l'icône et le texte */
     }
-    .menu-icon {
-      display: none;
-      cursor: pointer;
-      /* font-size: 2rem; /* Non nécessaire si on utilise des divs pour les lignes */
-      /* color: white; /* Non nécessaire, background-color sur .line */
-      flex-direction: column;
-      font-size: 2rem;
-      color: white;
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active { /* Style au survol et pour le lien actif */
+      color: #FA8072 !important;
     }
-    .menu-icon .line {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 5px 0;
-      transition: 0.4s;
-    }
-    .menu-icon.active .line:nth-child(1) {
-      transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    .menu-icon.active .line:nth-child(2) {
-      opacity: 0;
-    }
-    .menu-icon.active .line:nth-child(3) {
-      transform: rotate(45deg) translate(-5px, -6px);
-    }
-    nav ul li a:hover {
-      color: #FA8072;
-    }
-    nav ul li:last-child a {
-      padding-right: 0; /* Aligne le texte du dernier lien au bord droit du conteneur nav */
-    }
+    /* Les styles pour .menu-icon et .menu-icon .line sont supprimés car Bootstrap gère le toggler */
+
 
     .image-container {
       text-align: center;
@@ -238,23 +217,67 @@
     }
 
     /* Projets */
-    .projet-block {
-      margin-bottom: 50px;
-      text-align: center;
+    .projets-cards-wrapper {
+      display: flex;
+      flex-direction: column; /* Empile les cartes verticalement */
+      align-items: center; /* Centre les cartes horizontalement */
+      gap: 40px; /* Espace entre les cartes, similaire à .commentaires-wrapper */
+      margin-top: 30px;
     }
-    .projet-block img {
-      width: 100%;
-      max-width: 400px;
+
+    .projet-card {
+      background: #111; /* Similaire à .commentaire */
+      border: 2px solid #FA8072; /* Similaire à .commentaire */
+      border-radius: 15px; /* Similaire à .commentaire */
+      width: 100%; /* Prend toute la largeur disponible, centré par le wrapper */
+      max-width: 500px; /* Limite la largeur maximale des cartes, pour une meilleure lisibilité */
+      padding: 25px; /* Padding interne */
+      color: white;
+      box-shadow: 0 0 12px #FA8072; /* Similaire à .commentaire */
+      text-align: center; /* Centre le contenu de la carte */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .projet-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 0 18px #FA8072;
+    }
+
+    .projet-card-image-link {
+      display: block; /* Pour que l'image soit un bloc et prenne la largeur */
+      margin-bottom: 20px;
+    }
+
+    .projet-card img {
+      width: 100%; /* L'image prend toute la largeur de son conteneur <a> */
+      max-width: 400px; /* Limite la taille de l'image pour ne pas être trop grande */
+      height: auto;
       border-radius: 10px;
-      margin-bottom: 12px;
-      border: 2px solid #FA8072;
-      box-shadow: 0 0 10px #FA8072;
+      border: 2px solid #FA8072; /* Bordure pour l'image */
+      display: block; /* Assure que l'image est un bloc */
+      margin-left: auto;
+      margin-right: auto;
       transition: transform 0.3s ease;
-      cursor: pointer;
     }
-    .projet-block img:hover {
-      transform: scale(1.05);
+
+    .projet-card-image-link:hover img {
+      transform: scale(1.03);
     }
+
+    .projet-card-content h3 {
+      color: #FA8072; /* Couleur d'accent pour le titre du projet */
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .projet-card-content p {
+      font-size: 0.95rem; /* Taille de la description */
+      line-height: 1.6;
+      color: rgb(200, 200, 200); /* Couleur de texte pour la description */
+      margin-bottom: 20px;
+      text-align: left; /* Description alignée à gauche pour lisibilité */
+    }
+
     
     /* Commentaires reçus */
     #commentaires {
@@ -364,6 +387,24 @@
       transform: translate3d(100%, 0, 0);
     }
 
+    .btn-projet-card { /* Ancien .btn-view-project-table, renommé et stylé pour les cartes */
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #FA8072;
+      color: black;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+      border: 1px solid #FA8072;
+    }
+    .btn-projet-card:hover {
+      background-color: #FFB2A3; /* Accent plus clair au survol */
+      color: black;
+      transform: translateY(-2px) scale(1.02);
+    }
+
     .cssbuttons-io:hover span {
       color: ghostwhite; /* Assure que le texte devient blanc sur le fond noir au survol */
     }
@@ -393,66 +434,39 @@
 
     /* Responsive */
     @media screen and (max-width: 768px) {
-      header {
+      /* header { */ /* Le padding du header est géré par .navbar-custom et container-fluid */
+        /* padding: 20px 5%; */
+      /* } */
+      /* .header-wrapper { */ /* Plus utilisé, la structure est gérée par .navbar */
+        /* ... */
+      /* } */
+      .header-icon-link { /* Ajustement pour les icônes du header sur mobile */
+        /* margin-right: 0; */ /* L'espacement est géré par me-3 sur l'icône GitHub */
+        font-size: 1.7rem; /* Taille des icônes légèrement réduite sur mobile */
+      } 
+      .navbar-collapse { /* Style pour le menu déroulant sur mobile */
+        background-color: #0D0D0D; /* Fond pour le menu déroulant, identique à la navbar */
+        margin-top: 10px; /* Petit espace entre le toggler et le menu déroulant */
         padding: 20px 5%;
       }
-      .header-wrapper {
-        flex-direction: row; /* Logo à gauche, burger à droite */
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 0; /* Pas de marge en bas si le menu est un overlay */
-      }
-      h2.logo {
-        margin-right: 0;
-        font-size: 1.8rem; /* Ajuster la taille du logo sur mobile */
-      }
-      nav ul {
-        display: none; /* Caché par défaut sur mobile */
-        flex-direction: column;
-        /* align-items: center; /* Changé pour aligner le texte à gauche */
-        position: absolute; /* Changé de fixed à absolute */
-        top: 100%; /* Se positionne juste en dessous du header */
-        left: 0;
-        width: 100%;
-        height: auto; /* Hauteur automatique en fonction du contenu */
-        background-color: #0D0D0D; /* Fond similaire au header, ou #1A1A1A pour une légère distinction */
-        /* padding-top: 80px; /* Supprimé, géré par le padding interne */
-        padding: 10px 0; /* Léger padding vertical pour le conteneur des liens */
-        z-index: 999; /* En dessous du menu-icon (1001) mais au-dessus du contenu principal */
-        margin-top: 0;
-        /* order: 0; /* Non nécessaire ici */
-        box-shadow: 0px 5px 10px rgba(0,0,0,0.3); /* Ombre pour l'effet déroulant */
-        border-top: 1px solid #222; /* Séparateur subtil avec le header */
-      }
-      nav ul.active {
-        display: flex; /* Afficher quand actif */
-      }
-      nav ul li {
-        margin-bottom: 0; /* Supprimé, l'espacement sera dans le padding du lien */
-        width: 100%; /* Les éléments de liste prennent toute la largeur */
-      }
-      nav ul li a {
+      .navbar-nav .nav-link { /* Styles pour les liens dans le menu déroulant */
         font-size: 1.2rem; /* Taille de police ajustée pour le menu déroulant */
         padding: 12px 5%; /* Padding interne des liens, aligné sur le padding horizontal du header */
         width: 100%;
         box-sizing: border-box;
-        text-align: left; /* Texte des liens aligné à gauche */
+        text-align: left;
       }
-      .menu-icon {
-        display: flex; /* Afficher l'icône burger */
-        z-index: 1001; /* Au-dessus de l'overlay du menu */
-        /* margin-left: 20px; /* Supprimé, géré par space-between */
-        /* gap: 0; /* Supprimé */
-      }
+      /* .menu-icon est supprimé, Bootstrap gère le .navbar-toggler */
       .image-container img {
         width: 80%; /* Scale image width */
         max-width: 280px; /* Maintain a reasonable max-width */
       }
       .competences {
-        flex-direction: row;
-        justify-content: space-around;
-        gap: 15px;
-        flex-wrap: wrap; /* Assurer le retour à la ligne des compétences si l'espace manque */
+        display: grid; /* Passage en mode grille pour deux colonnes */
+        grid-template-columns: repeat(2, 1fr); /* Deux colonnes de largeur égale */
+        gap: 20px; /* Espacement entre les éléments de la grille */
+        justify-items: center; /* Centre les items horizontalement dans leur cellule de grille */
+        /* flex-wrap: wrap; /* Plus nécessaire avec grid */
       }
       .competence-item {
         width: 100px;
@@ -475,9 +489,6 @@
       }
       p {
         font-size: 14px; /* Adjust font-size */
-      }
-      .projet-block img {
-        max-width: 300px; /* Adjust project image size */
       }
       h1.typewriter-text {
         font-size: 1.5rem; /* Adjust typewriter text size */
@@ -506,24 +517,31 @@
 </head>
 <body>
 
-  <header>
-   <div class="header-wrapper">
-      <h2 class="logo">Khadim</h2>
-      <nav>
-        <ul id="nav-list">
-          <li><a href="#hero"><i class='bx bxs-home-smile'></i>Accueil</a></li>
-          <li><a href="#projets"><i class='bx bxs-briefcase-alt-2'></i>Mes projets</a></li>
-          <li><a href="#contact"><i class='bx bxs-contact'></i>Contact</a></li>
-          <li><a href="#a-propos"><i class='bx bxs-user-detail'></i>À propos</a></li>
-          <li><a href="Cv.khadim.pdf.pdf" target="_blank" rel="noopener"><i class='bx bxs-file-pdf'></i>CV</a></li>
-        </ul>
-      </nav>
-      <div class="menu-icon" aria-label="Menu" role="button" tabindex="0">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+      <div class="container-fluid">
+        <div class="navbar-brand d-flex align-items-center">
+          <a href="https://github.com/khadim4k" target="_blank" aria-label="Profil GitHub de Khadim" class="header-icon-link text-white me-3"> 
+              <i class='bx bxl-github'></i>
+          </a>
+          <a href="mailto:khadim4k@gmail.com" aria-label="Envoyer un email à Khadim" class="header-icon-link text-white">
+              <i class='bx bxl-gmail'></i>
+          </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#hero"><i class='bx bxs-home-smile'></i>Accueil</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projets"><i class='bx bxs-briefcase-alt-2'></i>Mes projets</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact"><i class='bx bxs-contact'></i>Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="#a-propos"><i class='bx bxs-user-detail'></i>À propos</a></li>
+            <li class="nav-item"><a class="nav-link" href="Cv.khadim.pdf.pdf" target="_blank" rel="noopener"><i class='bx bxs-file-pdf'></i>CV</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </nav>
   </header>
 
   <main>
@@ -534,26 +552,20 @@
 
     <h1 class="typewriter-text"><span id="typed-text"></span></h1>
 
-    <p class="developer-title">Développeur Front-end</p>
+    <p class="developer-title">Développeur Front-end Junior</p>
 
     <!-- Bouton CV ajouté ici -->
     <a href="Cv.khadim.pdf.pdf" target="_blank" rel="noopener" class="cssbuttons-io" style="margin-bottom: 40px;"> <!-- Ajout de margin-bottom pour espacement avant les icônes sociales -->
       <span>
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z" fill="currentColor"></path>
-        </svg>
+        <i class='bx bx-right-arrow-alt' style="vertical-align: middle; font-size: 1.3em;"></i> <!-- Icône flèche -->
         Voir mon CV
       </span>
     </a>
 
     <div class="socials" aria-label="Réseaux sociaux">
-      <a href="https://www.linkedin.com/in/khadim-gu%C3%A8ye-93274b364?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" aria-label="LinkedIn" class='bx bxl-linkedin'></a>
       <a href="https://github.com/khadim4k" target="_blank" aria-label="GitHub" class='bx bxl-github'></a>
-      <a href="https://www.instagram.com/777snboy/" target="_blank" aria-label="Instagram" class='bx bxl-instagram'></a>
-      <a href="https://www.snapchat.com/add/snboy777" target="_blank" aria-label="Snapchat" class='bx bxl-snapchat'></a>
-      <a href="https://www.tiktok.com/@777snboy" target="_blank" aria-label="TikTok" class='bx bxl-tiktok'></a>
-      <a href="https://x.com/777snboy" target="_blank" aria-label="Twitter" class='bx bxl-twitter'></a>
+            <a href="https://www.linkedin.com/in/khadim-gu%C3%A8ye-93274b364/" target="_blank" aria-label="LinkedIn" class='bx bxl-linkedin'></a>
+
       <a href="https://youtube.com/@777snboy?si=fz_lh1BvQ6GeZNQ8" target="_blank" aria-label="YouTube" class='bx bxl-youtube'></a>
     </div>
   </section>
@@ -609,73 +621,64 @@
         <i class='bx bxl-visual-studio competence-icon'></i> <!-- Icône Visual Studio pour VS Code -->
         VS Code
       </div>
+      <div class="competence-item" title="Java">
+        <i class='bx bxl-java competence-icon'></i>
+        Java
+      </div>
+      <div class="competence-item" title="C#">
+        <i class='bx bx-code-alt competence-icon'></i> 
+        C#
+      </div>
     </div>
   </section>
 
   <section id="projets">
     <h2>📂 Mes projets</h2>
-     <div class="projet-block">
-      <a href="https://qcm-sn.ct.ws/index.php" target="_blank" title="Voir le projet QCM">
-        <img src="qcm.png" alt="Aperçu du projet site de QCM pour étudiants" />
-      </a><br/>
-      <!-- From Uiverse.io by adamgiebl -->
-      <a href="https://qcm-sn.ct.ws/index.php" target="_blank" class="cssbuttons-io">
-        <span>
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z" fill="currentColor"></path>
-          </svg>
-          Projet fil rouge : Site de qcm pour les étudiants de l'ESTM
-        </span>
-      </a>
-    </div>
-
-    <div class="projet-block">
-      <a href="code_couleur.html" target="_blank" title="Voir le générateur de code couleur">
-        <img src="codecol.png" alt="Aperçu du projet générateur de code couleur" />
-      </a><br/>
-      <!-- From Uiverse.io by adamgiebl -->
-      <a href="code_couleur.html" target="_blank" class="cssbuttons-io">
-        <span>
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z" fill="currentColor"></path>
-          </svg>
-          Générateur de code couleur
-        </span>
-      </a>
-    </div>
-
-    <div class="projet-block">
-      <a href="formulaire_javascript.html" target="_blank" title="Voir le formulaire JavaScript">
-        <img src="frs.png" alt="Aperçu du projet formulaire de candidature en JavaScript" />
-      </a><br/>
-      <!-- From Uiverse.io by adamgiebl -->
-      <a href="formulaire_javascript.html" target="_blank" class="cssbuttons-io">
-        <span>
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z" fill="currentColor"></path>
-          </svg>
-          Formulaire javascript
-        </span>
-      </a>
-    </div>
-
-    <div class="projet-block">
-      <a href="site_pressing.html" target="_blank" title="Voir le site de pressing">
-        <img src="pressing.png" alt="Aperçu du projet site vitrine pour un pressing" />
-      </a><br/>
-      <!-- From Uiverse.io by adamgiebl -->
-      <a href="site_pressing.html" target="_blank" class="cssbuttons-io">
-        <span>
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z" fill="currentColor"></path>
-          </svg>
-          Site de pressing
-        </span>
-      </a>
+    <div class="projets-cards-wrapper">
+      <!-- Projet 1: QCM -->
+      <div class="projet-card">
+        <a href="https://qcm-sn.ct.ws/index.php" target="_blank" class="projet-card-image-link">
+          <img src="qcm.png" alt="Aperçu du projet site de QCM pour étudiants" />
+        </a>
+        <div class="projet-card-content">
+          <h3>Site de QCM (ESTM)</h3>
+          <p>Projet fil rouge : Site de QCM interactif pour les étudiants de l'ESTM, facilitant les révisions et le suivi des progrès.</p>
+          <a href="https://qcm-sn.ct.ws/index.php" target="_blank" class="btn-projet-card">Voir le projet</a>
+        </div>
+      </div>
+      <!-- Projet 2: Générateur de Code Couleur -->
+      <div class="projet-card">
+        <a href="code_couleur.html" target="_blank" class="projet-card-image-link">
+          <img src="codecol.png" alt="Aperçu du projet générateur de code couleur" />
+        </a>
+        <div class="projet-card-content">
+          <h3>Générateur de Code Couleur</h3>
+          <p>Générateur de codes couleurs hexadécimaux aléatoires avec fonctionnalité de copie instantanée dans le presse-papiers.</p>
+          <a href="code_couleur.html" target="_blank" class="btn-projet-card">Voir le projet</a>
+        </div>
+      </div>
+      <!-- Projet 3: Formulaire JavaScript -->
+      <div class="projet-card">
+        <a href="formulaire_javascript.html" target="_blank" class="projet-card-image-link">
+          <img src="frs.png" alt="Aperçu du projet formulaire de candidature en JavaScript" />
+        </a>
+        <div class="projet-card-content">
+          <h3>Formulaire JavaScript</h3>
+          <p>Formulaire de candidature dynamique avec validation en JavaScript, inspiré du processus de recrutement du Port Autonome de Dakar.</p>
+          <a href="formulaire_javascript.html" target="_blank" class="btn-projet-card">Voir le projet</a>
+        </div>
+      </div>
+      <!-- Projet 4: Site Vitrine Pressing -->
+      <div class="projet-card">
+        <a href="site_pressing.html" target="_blank" class="projet-card-image-link">
+          <img src="pressing.png" alt="Aperçu du projet site vitrine pour un pressing" />
+        </a>
+        <div class="projet-card-content">
+          <h3>Site Vitrine Pressing</h3>
+          <p>Site vitrine pour un service de pressing, mettant en avant une approche motivante et axée sur le développement personnel.</p>
+          <a href="site_pressing.html" target="_blank" class="btn-projet-card">Voir le projet</a>
+        </div>
+      </div>
     </div>
   </section>
   <section id="contact" class="section">
@@ -740,8 +743,6 @@ Je vous laisse voir par vous-même.
     <div class="footer-socials" aria-label="Réseaux sociaux">
       <a href="https://www.linkedin.com/in/khadim-gu%C3%A8ye-93274b364?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" aria-label="LinkedIn" class='bx bxl-linkedin'></a>
       <a href="https://github.com/khadim4k" target="_blank" aria-label="GitHub" class='bx bxl-github'></a>
-      <a href="https://www.instagram.com/777snboy/" target="_blank" aria-label="Instagram" class='bx bxl-instagram'></a>
-      <a href="https://www.snapchat.com/add/snboy777" target="_blank" aria-label="Snapchat" class='bx bxl-snapchat'></a>
       <a href="https://wa.me/+221784066315" target="_blank" aria-label="WhatsApp" class='bx bxl-whatsapp'></a>
       <a href="mailto:khadim4k@gmail.com" aria-label="Email" class='bx bxl-gmail'></a>
     </div>
@@ -769,22 +770,28 @@ function type() {
 
 type();
 
-const menuIcon = document.querySelector('.menu-icon');
-const navList = document.getElementById('nav-list');
+// Suppression de l'ancien script du menu burger personnalisé
+// const menuIcon = document.querySelector('.menu-icon');
+// const navList = document.getElementById('nav-list');
+// ... (ancien code)
 
-if (menuIcon && navList) {
-  menuIcon.addEventListener('click', () => {
-    navList.classList.toggle('active');
-    menuIcon.classList.toggle('active'); // Pour animer l'icône burger en croix
-  });
 
-  // Fermer le menu mobile lorsqu'un lien est cliqué
-  const navLinks = navList.querySelectorAll('a');
-  navLinks.forEach(link => {
+// Fermer le menu mobile Bootstrap lorsqu'un lien est cliqué (pour les ancres sur la même page)
+const navLinksBootstrap = document.querySelectorAll('#navbarNav .nav-link');
+const navbarTogglerBootstrap = document.querySelector('.navbar-toggler');
+constnavbarNavBootstrap = document.getElementById('navbarNav');
+
+if (navbarNavBootstrap) { // Vérifier si l'élément existe
+  navLinksBootstrap.forEach(link => {
     link.addEventListener('click', () => {
-      if (navList.classList.contains('active')) { // Vérifie si le menu est ouvert
-        navList.classList.remove('active');
-        menuIcon.classList.remove('active');
+      // S'assurer que le menu est bien géré par Bootstrap Collapse
+      const bsCollapseInstance = bootstrap.Collapse.getInstance(navbarNavBootstrap);
+      
+      // On ne ferme que si le menu est effectivement "ouvert" (expanded) et visible sur mobile
+      if (navbarTogglerBootstrap && navbarTogglerBootstrap.getAttribute('aria-expanded') === 'true' && window.getComputedStyle(navbarTogglerBootstrap).display !== 'none') {
+        if (bsCollapseInstance) { // Vérifier si l'instance existe avant d'appeler hide()
+          bsCollapseInstance.hide();
+        }
       }
     });
   });
