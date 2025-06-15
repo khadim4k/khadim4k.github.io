@@ -6,34 +6,49 @@
   <title>Khadim Guèye - Développeur Front-end | Portfolio</title>
   <meta name="description" content="Portfolio de Khadim Guèye, développeur front-end passionné basé à Dakar. Découvrez mes projets, compétences en HTML, CSS, JavaScript, PHP, et plus.">
   <meta name="keywords" content="HTML, CSS, JavaScript, PHP, Développeur Web, Front-end, Portfolio, Khadim Gueye, Dakar, React">
-  <link rel="icon" type="image/jpeg" href="kg.jpg">
+  <link rel="icon" type="image/jpeg" href="profile-pic.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <style>
+  :root {
+    --color-primary-bg: black;
+    --color-secondary-bg: #0D0D0D; /* Navbar, etc. */
+    --color-tertiary-bg: #111;    /* Cards */
+    --color-footer-bg: #080808;
+
+    --color-text-primary: white;
+    --color-text-secondary: rgb(190, 190, 190);
+    --color-text-titles-global: rgb(182, 172, 172); /* Global h2 */
+    --color-text-on-accent: black;
+    --color-text-on-accent-hover: ghostwhite;
+
+    --color-accent: #FA8072; /* Saumon */
+    --rgb-accent: 250, 128, 114; /* Pour rgba */
+    --color-accent-light: #FFB2A3; /* Plus clair pour contraste sur boutons */
+    --color-accent-dark-hover: #ee7171; /* Plus foncé pour survol boutons */
+
+    --font-primary: 'Poppins', sans-serif;
+  }
+
   body {
-    font-family: 'Poppins', sans-serif; /* Police globale */
+    font-family: var(--font-primary);
     margin: 0;
     padding: 0;
-    background-color: black; /* Fond principal du body/main en noir */
-    color: rgb(190, 190, 190); /* Couleur de texte par défaut plus claire */
+    background-color: var(--color-primary-bg);
+    color: var(--color-text-secondary);
     scroll-behavior: smooth;
   }
   h2 {
     font-weight: 600;
-    color: rgb(182, 172, 172);
+    color: var(--color-text-titles-global);
   }
   p {
     font-size: 16px;
     line-height: 1.6;
-    color: white;
-  }
-  .center-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: var(--color-text-primary);
   }
   .section {
     padding: 60px 20px;
@@ -53,15 +68,15 @@
     gap: 10px;
     font-size: 18px;
   }
-  .contact-item a { /* Modifié pour appliquer la couleur d'accent directement */
-    color: #FA8072;
+  .contact-item a {
+    color: var(--color-accent);
     text-decoration: none;
     font-weight: 600;
   }
 
     /* Styles pour la barre de navigation Bootstrap personnalisée */
     .navbar-custom {
-      background-color: #0D0D0D; /* Fond plus foncé pour le header */
+      background-color: var(--color-secondary-bg);
       padding-top: 15px; /* Ajustement du padding vertical */
       padding-bottom: 15px;
     }
@@ -76,25 +91,25 @@
 
     /* Styles pour les icônes dans le header (GitHub, Gmail) */
     .header-icon-link {
-      color: white;
+      color: var(--color-text-primary);
       font-size: 1.9rem; /* Taille des icônes */
       margin-right: 18px; /* Espace entre les icônes */
       transition: transform 0.3s ease, color 0.3s ease;
       display: inline-block; /* Pour que transform fonctionne correctement */
     }
     .header-icon-link:hover {
-      color: #FA8072; /* Couleur d'accent au survol */
+      color: var(--color-accent);
       transform: scale(1.15); /* Animation de grossissement */
     }
     .header-icon-link:last-child {
       margin-right: 0;
     }
     /* Suppression de l'ancien style du logo texte */
-    /* h2.logo { ... } */ 
+    /* h2.logo { ... } */
 
     /* Styles pour les liens de navigation Bootstrap */
     .navbar-nav .nav-link {
-      color: white;
+      color: var(--color-text-primary);
       text-decoration: none;
       transition: color 0.3s;
       font-weight: 600;
@@ -109,7 +124,7 @@
     }
     .navbar-nav .nav-link:hover,
     .navbar-nav .nav-link.active { /* Style au survol et pour le lien actif */
-      color: #FA8072 !important;
+      color: var(--color-accent) !important;
     }
     /* Les styles pour .menu-icon et .menu-icon .line sont supprimés car Bootstrap gère le toggler */
 
@@ -130,7 +145,7 @@
       font-size: 2rem;
       font-weight: bold;
       text-align: center;
-      color: white;
+      color: var(--color-text-primary);
       margin-bottom: 15px;
       word-wrap: break-word;
     }
@@ -139,11 +154,11 @@
         border-color: transparent;
       }
       50% {
-        border-color: #FA8072; /* Couleur du curseur */
+        border-color: var(--color-accent); /* Couleur du curseur */
       }
     }
     .developer-title { /* Ceci est un <p> maintenant */
-      color: white;
+      color: var(--color-text-primary);
       font-weight: 600;
       font-size: 1.3rem;
       text-align: center;
@@ -154,7 +169,7 @@
       margin-bottom: 60px;
     }
     .socials a {
-      color: #FA8072;
+      color: var(--color-accent);
       margin: 0 12px;
       font-size: 2rem;
       transition: color 0.3s;
@@ -162,19 +177,18 @@
       text-decoration: none;
     }
     .socials a:hover {
-      color: white;
+      color: var(--color-text-primary);
     }
     main section { /* Styles pour les sections dans main */
       padding: 60px 10%;
-      color: white;
+      color: var(--color-text-primary);
     }
     /* Add specific style for the hero section to center its content */
     section#hero {
         text-align: center; /* Center inline-block children like the CV button */
     }
-    main section > h2, /* Styles pour les titres de section h2 */
-    section > h2 { /* Pour les h2 directement enfants de section (comme contact, a-propos) */
-      color: #FA8072;
+    main > section > h2 { /* Styles pour les titres de section h2 dans main */
+      color: var(--color-accent);
       margin-bottom: 30px;
       text-align: center;
       font-size: 1.8rem; /* Taille cohérente pour les titres de section */
@@ -191,8 +205,8 @@
       margin-bottom: 60px;
     }
     .competence-item {
-      background: #111;
-      border: 2px solid #FA8072;
+      background: var(--color-tertiary-bg);
+      border: 2px solid var(--color-accent);
       border-radius: 12px;
       width: 120px;
       height: 120px;
@@ -200,10 +214,10 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: white;
+      color: var(--color-text-primary);
       font-weight: 600;
       font-size: 1.1rem;
-      box-shadow: 0 0 10px #FA8072;
+      box-shadow: 0 0 10px var(--color-accent);
       transition: transform 0.3s ease;
       cursor: default;
     }
@@ -213,7 +227,7 @@
     .competence-icon {
       font-size: 3rem;
       margin-bottom: 10px;
-      color: #FA8072;
+      color: var(--color-accent);
     }
 
     /* Projets */
@@ -226,21 +240,21 @@
     }
 
     .projet-card {
-      background: #111; /* Similaire à .commentaire */
-      border: 2px solid #FA8072; /* Similaire à .commentaire */
+      background: var(--color-tertiary-bg);
+      border: 2px solid var(--color-accent);
       border-radius: 15px; /* Similaire à .commentaire */
       width: 100%; /* Prend toute la largeur disponible, centré par le wrapper */
       max-width: 500px; /* Limite la largeur maximale des cartes, pour une meilleure lisibilité */
       padding: 25px; /* Padding interne */
-      color: white;
-      box-shadow: 0 0 12px #FA8072; /* Similaire à .commentaire */
+      color: var(--color-text-primary);
+      box-shadow: 0 0 12px var(--color-accent);
       text-align: center; /* Centre le contenu de la carte */
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .projet-card:hover {
       transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 0 18px #FA8072;
+      box-shadow: 0 0 18px var(--color-accent);
     }
 
     .projet-card-image-link {
@@ -253,7 +267,7 @@
       max-width: 400px; /* Limite la taille de l'image pour ne pas être trop grande */
       height: auto;
       border-radius: 10px;
-      border: 2px solid #FA8072; /* Bordure pour l'image */
+      border: 2px solid var(--color-accent);
       display: block; /* Assure que l'image est un bloc */
       margin-left: auto;
       margin-right: auto;
@@ -265,7 +279,7 @@
     }
 
     .projet-card-content h3 {
-      color: #FA8072; /* Couleur d'accent pour le titre du projet */
+      color: var(--color-accent);
       font-size: 1.5rem;
       margin-bottom: 10px;
     }
@@ -273,7 +287,7 @@
     .projet-card-content p {
       font-size: 0.95rem; /* Taille de la description */
       line-height: 1.6;
-      color: rgb(200, 200, 200); /* Couleur de texte pour la description */
+      color: var(--color-text-secondary); /* Couleur de texte pour la description, ajustée pour cohérence */
       margin-bottom: 20px;
       text-align: left; /* Description alignée à gauche pour lisibilité */
     }
@@ -292,34 +306,41 @@
       margin-top: 30px;
     }
     .commentaire {
-      background: #111;
-      border: 2px solid #FA8072;
+      background: var(--color-tertiary-bg);
+      border: 2px solid var(--color-accent);
       border-radius: 15px;
       width: 280px;
       padding: 20px;
-      color: white;
-      box-shadow: 0 0 12px #FA8072;
+      color: var(--color-text-primary);
+      box-shadow: 0 0 12px var(--color-accent);
       text-align: left;
       position: relative;
     }
     .commentaire .profil-pic {
       width: 60px;
       height: 60px;
-      background-color: white;
+      background-color: var(--color-text-primary);
       border-radius: 50%;
       position: absolute;
       top: -30px;
       left: 20px;
-      border: 3px solid #FA8072;
+      border: 3px solid var(--color-accent);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .commentaire .profil-pic i {
+      font-size: 2.5rem;
+      color: var(--color-accent);
     }
     .commentaire p {
       margin-top: 40px;
       font-size: 1.1rem;
       font-style: italic;
     }
-
     footer {
-      background-color: #080808; /* Fond encore plus foncé pour le footer */
+      background-color: var(--color-footer-bg);
       padding: 20px;
       text-align: center;
       font-size: 0.9rem;
@@ -327,25 +348,23 @@
       color: rgb(114, 109, 109);
       border-top: 1px solid #FA8072;
     }
-
     /* Styles pour le bouton cssbuttons-io from Uiverse.io by adamgiebl */
     .cssbuttons-io {
       position: relative;
-      font-family: inherit; /* Hérite de 'Poppins' */
+      font-family: var(--font-primary);
       font-weight: 500;
       font-size: 1rem; /* Ajusté pour correspondre à la taille précédente */
       letter-spacing: 0.05em;
       border-radius: 0.8em;
       cursor: pointer; 
       border: none;
-      background: #FA8072; /* Couleur d'accent par défaut, plus visible */
-      color: black; /* Texte noir pour contraste sur fond clair */
+      background: var(--color-accent-light);
+      color: var(--color-text-on-accent);
       overflow: hidden;
       text-decoration: none !important; /* Pour les balises <a> */
       display: inline-block; /* Pour que l'<a> se comporte comme un bouton */
       margin-top: 15px; /* Espace par rapport à l'image ou au <br> */
-      /* Suggestion pour améliorer le contraste */
-      background: #FFB2A3; /* Fond saumon plus clair pour contraste 4.59:1 avec texte noir */
+
     }
 
     .cssbuttons-io svg {
@@ -375,8 +394,7 @@
 
     .cssbuttons-io::before {
       content: "";
-      /* background: #dd9090; /* Ancien fond rose clair pour l'effet de survol */
-      background: #ee7171; /* Fond sombre pour l'effet de survol, contraste élevé avec texte blanc */
+      background: var(--color-accent-dark-hover);
       width: 120%;
       left: -10%;
       transform: skew(30deg);
@@ -390,23 +408,23 @@
     .btn-projet-card { /* Ancien .btn-view-project-table, renommé et stylé pour les cartes */
       display: inline-block;
       padding: 10px 20px;
-      background-color: #FA8072;
-      color: black;
+      background-color: var(--color-accent);
+      color: var(--color-text-on-accent);
       text-decoration: none;
       border-radius: 6px;
       font-weight: 500;
       font-size: 1rem;
       transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-      border: 1px solid #FA8072;
+      border: 1px solid var(--color-accent);
     }
     .btn-projet-card:hover {
-      background-color: #FFB2A3; /* Accent plus clair au survol */
-      color: black;
+      background-color: var(--color-accent-light);
+      color: var(--color-text-on-accent);
       transform: translateY(-2px) scale(1.02);
     }
 
     .cssbuttons-io:hover span {
-      color: ghostwhite; /* Assure que le texte devient blanc sur le fond noir au survol */
+      color: var(--color-text-on-accent-hover);
     }
 
     .cssbuttons-io:active {
@@ -417,21 +435,20 @@
       margin-bottom: 15px;
     }
     .footer-socials a {
-      color: #FA8072;
+      color: var(--color-accent);
       margin: 0 10px;
       font-size: 1.5rem; /* Taille ajustée pour le footer */
       transition: color 0.3s;
       text-decoration: none;
     }
     .footer-socials a:hover {
-      color: white;
+      color: var(--color-text-primary);
     }
 
     footer p a { /* Ajout d'une règle pour les liens dans les paragraphes du footer */
-      color: #FA8072;
+      color: var(--color-accent);
       text-decoration: none;
     }
-
     /* Responsive */
     @media screen and (max-width: 768px) {
       /* header { */ /* Le padding du header est géré par .navbar-custom et container-fluid */
@@ -445,7 +462,7 @@
         font-size: 1.7rem; /* Taille des icônes légèrement réduite sur mobile */
       } 
       .navbar-collapse { /* Style pour le menu déroulant sur mobile */
-        background-color: #0D0D0D; /* Fond pour le menu déroulant, identique à la navbar */
+        background-color: var(--color-secondary-bg);
         margin-top: 10px; /* Petit espace entre le toggler et le menu déroulant */
         padding: 20px 5%;
       }
@@ -508,19 +525,32 @@
     section#a-propos p {
       color: #e0dddd;
     }
+    /* Assurer que le paragraphe dans "À propos" reste aligné à gauche pour la lisibilité, 
+       même si la classe .section (qui a text-align: center) est appliquée au parent <section> */
+    section#a-propos.section p {
+        text-align: center;
+    }
+    /* Assurer explicitement que le titre de la section "À propos" est centré */
+    section#a-propos > h2 {
+        text-align: center;
+    }
     /* Style pour les spans (mots-clés) dans la section "À propos" */
     section#a-propos p span {
-      color: #FA8072;
+      color: var(--color-accent);
       font-weight: bold;
     }
     /* Style pour les tags de technologie dans les descriptions de projet */
     .tech-tag {
-      color: #FA8072; /* Couleur saumon */
+      color: var(--color-accent);
       font-weight: bold;
-      background-color: rgba(250, 128, 114, 0.1); /* Fond saumon très léger */
+      background-color: rgba(var(--rgb-accent), 0.1); /* Fond saumon très léger */
       padding: 2px 6px;
       border-radius: 4px;
       font-size: 0.9em; /* Légèrement plus petit que le texte environnant */
+    }
+    /* Centrer le paragraphe descriptif dans la section des technologies du portfolio */
+    #portfolio-tech > p {
+      text-align: center;
     }
   </style>
 </head>
@@ -530,7 +560,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
       <div class="container-fluid">
         <div class="navbar-brand d-flex align-items-center">
-          <a href="https://github.com/khadim4k" target="_blank" aria-label="Profil GitHub de Khadim" class="header-icon-link text-white me-3"> 
+          <a href="https://github.com/khadim4k" target="_blank" rel="me" aria-label="Profil GitHub de Khadim" class="header-icon-link text-white me-3"> 
               <i class='bx bxl-github'></i>
           </a>
           <a href="mailto:khadim4k@gmail.com" aria-label="Envoyer un email à Khadim" class="header-icon-link text-white">
@@ -572,7 +602,7 @@
     </a>
 
     <div class="socials" aria-label="Réseaux sociaux">
-      <a href="https://github.com/khadim4k" target="_blank" aria-label="GitHub" class='bx bxl-github'></a>
+      <a href="https://github.com/khadim4k" target="_blank" rel="me" aria-label="GitHub" class='bx bxl-github'></a>
             <a href="https://www.linkedin.com/in/khadim-gu%C3%A8ye-93274b364/" target="_blank" aria-label="LinkedIn" class='bx bxl-linkedin'></a>
 
       <a href="https://youtube.com/@777snboy?si=fz_lh1BvQ6GeZNQ8" target="_blank" aria-label="YouTube" class='bx bxl-youtube'></a>
@@ -582,7 +612,15 @@
   <section id="competences">
     <h2>💻 Compétences</h2>
     <div class="competences">
-      <div class="competence-item" title="HTML">
+       <div class="competence-item" title="GitHub">
+        <i class='bx bxl-github competence-icon'></i>
+        GitHub
+      </div>
+       <div class="competence-item" title="InfinityFree">
+        <i class='bx bx-infinite competence-icon'></i> 
+        InfinityFree
+      </div>
+       <div class="competence-item" title="HTML">
         <i class='bx bxl-html5 competence-icon'></i>
         HTML
       </div>
@@ -594,6 +632,10 @@
         <i class='bx bxl-javascript competence-icon'></i>
         JavaScript
       </div>
+      <div class="competence-item" title="PHP">
+        <i class='bx bxl-php competence-icon'></i>
+        PHP
+      </div>
       <div class="competence-item" title="Linux (General)">
         <i class='bx bxl-tux competence-icon'></i> 
         Linux
@@ -602,17 +644,21 @@
         <i class='bx bxs-terminal competence-icon'></i> <!-- Icône Terminal pour Kali Linux -->
         Kali linux
       </div>
-      <div class="competence-item" title="PHP">
-        <i class='bx bxl-php competence-icon'></i>
-        PHP
-      </div>
-      <div class="competence-item" title="GitHub">
-        <i class='bx bxl-github competence-icon'></i>
-        GitHub
-      </div>
        <div class="competence-item" title="Python">
         <i class='bx bxl-python competence-icon'></i>
         Python
+      </div>
+      <div class="competence-item" title="MySQL">
+        <i class='bx bxs-data competence-icon'></i> <!-- Icône de base de données pour MySQL -->
+        MySQL
+      </div>
+       <div class="competence-item" title="VS Code">
+        <i class='bx bxl-visual-studio competence-icon'></i> <!-- Icône Visual Studio pour VS Code -->
+        VS Code
+      </div>
+      <div class="competence-item" title="Java">
+        <i class='bx bxl-java competence-icon'></i>
+        Java
       </div>
        <div class="competence-item" title="Figma">
         <i class='bx bxl-figma competence-icon'></i>
@@ -621,22 +667,6 @@
       <div class="competence-item" title="PowerAMC">
         <i class='bx bxs-cog competence-icon'></i> <!-- Icône générique pour PowerAMC -->
         PowerAMC
-      </div>
-      <div class="competence-item" title="MySQL">
-        <i class='bx bxs-data competence-icon'></i> <!-- Icône de base de données pour MySQL -->
-        MySQL
-      </div>
-      <div class="competence-item" title="VS Code">
-        <i class='bx bxl-visual-studio competence-icon'></i> <!-- Icône Visual Studio pour VS Code -->
-        VS Code
-      </div>
-      <div class="competence-item" title="Java">
-        <i class='bx bxl-java competence-icon'></i>
-        Java
-      </div>
-      <div class="competence-item" title="InfinityFree">
-        <i class='bx bx-cloud competence-icon'></i> 
-        InfinityFree
       </div>
     </div>
   </section>
@@ -653,7 +683,7 @@
           <h3>Site de QCM (ESTM)</h3>
           <p>
             Projet fil rouge développé en <span class="tech-tag">PHP</span> avec une base de données <span class="tech-tag">MySQL</span>. Ce site de QCM interactif est conçu pour les étudiants de l'ESTM, facilitant leurs révisions et le suivi de leurs progrès. Il est hébergé gratuitement via <span class="tech-tag">InfinityFree</span>, accessible avec le sous-domaine <code>qcm-sn</code> sur le domaine <code>.ct.ws</code>.
-            <br><em>Compte visiteur disponible :</em><br>Email: <code>visit@gmail.com</code><br>Mot de passe: <code>passer123</code>
+            <br><em>Compte visiteur disponible :</em><br>Email: <code>khadim4k@gmail.com</code><br>Mot de passe: <code>passer123</code>
           </p>
           <a href="https://qcm-sn.ct.ws/index.php" target="_blank" class="btn-projet-card">Voir le projet</a>
         </div>
@@ -699,6 +729,39 @@
       </div>
     </div>
   </section>
+  <section id="portfolio-tech">
+    <h2>🛠️ Réalisation du Portfolio</h2>
+    <p>Ce portfolio a été construit avec soin en utilisant les langages et outils suivants :</p>
+    <div class="competences">
+      <div class="competence-item" title="HTML5">
+        <i class='bx bxl-html5 competence-icon'></i>
+        HTML5
+      </div>
+      <div class="competence-item" title="CSS3">
+        <i class='bx bxl-css3 competence-icon'></i>
+        CSS3
+      </div>
+      <div class="competence-item" title="JavaScript">
+        <i class='bx bxl-javascript competence-icon'></i>
+        JavaScript
+      </div>
+      <div class="competence-item" title="Bootstrap">
+        <i class='bx bxl-bootstrap competence-icon'></i>
+        Bootstrap
+      </div>
+      <div class="competence-item" title="Boxicons">
+        <i class='bx bxs-vector competence-icon'></i> <!-- Icône générique pour librairie d'icônes -->
+        Boxicons
+      </div>
+        <div class="competence-item" title="GitHub">
+        <i class='bx bxl-github competence-icon'></i>
+        GitHub
+      </div>
+      
+      <!-- Vous pouvez ajouter d'autres outils comme VS Code, Git, GitHub Pages si pertinent -->
+    </div>
+  </section>
+
   <section id="contact" class="section">
   <h2>Envie de me contacter ?</h2> <!-- Style géré par CSS main section > h2 -->
   <p>N'hésitez pas à m'écrire ou à m'appeler. Je suis disponible et à l'écoute de vos projets !</p>
@@ -734,22 +797,23 @@ Je vous laisse voir par vous-même.
   </p>
 </section>
 
+  
   <section id="commentaires">
     <h2>💬 Commentaires reçus</h2>
     <div class="commentaires-wrapper">
 
       <div class="commentaire">
-      
+        <div class="profil-pic"><i class='bx bxs-user'></i></div>
         <p>« Ton portfolio est très responsive»</p>
       </div>
 
       <div class="commentaire">
-       
+        <div class="profil-pic"><i class='bx bxs-user'></i></div>
         <p>«J'aime bien !»</p>
       </div>
 
       <div class="commentaire">
-        
+        <div class="profil-pic"><i class='bx bxs-user'></i></div>
         <p>« Intéressant »</p>
       </div>
 
@@ -760,7 +824,7 @@ Je vous laisse voir par vous-même.
   <footer>
     <div class="footer-socials" aria-label="Réseaux sociaux">
       <a href="https://www.linkedin.com/in/khadim-gu%C3%A8ye-93274b364?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" aria-label="LinkedIn" class='bx bxl-linkedin'></a>
-      <a href="https://github.com/khadim4k" target="_blank" aria-label="GitHub" class='bx bxl-github'></a>
+      <a href="https://github.com/khadim4k" target="_blank" rel="me" aria-label="GitHub" class='bx bxl-github'></a>
       <a href="https://wa.me/+221784066315" target="_blank" aria-label="WhatsApp" class='bx bxl-whatsapp'></a>
       <a href="mailto:khadim4k@gmail.com" aria-label="Email" class='bx bxl-gmail'></a>
     </div>
@@ -768,7 +832,7 @@ Je vous laisse voir par vous-même.
       <a href="mailto:khadim4k@gmail.com">khadim4k@gmail.com</a> | 
       <a href="https://wa.me/+221784066315" target="_blank">+221 78 406 63 15</a>
     </p>
-<p>&copy; 2024 Khadim Guèye - Tous droits réservés</p> <!-- ou l'année actuelle -->
+    <p>&copy; 2025 Khadim Guèye - Tous droits réservés</p>
   </footer>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
