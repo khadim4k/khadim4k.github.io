@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8"> 
+ <link rel="manifest" href="manifest.json">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon"> 
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Khadim Guèye - Développeur Front-end | Portfolio</title>
-  <meta name="description" content="Portfolio de Khadim Guèye, développeur front-end passionné basé à Dakar. Découvrez mes projets, compétences en HTML, CSS, JavaScript, PHP, et plus.">
-  <meta name="keywords" content="HTML, CSS, JavaScript, PHP, Développeur Web, Front-end, Portfolio, Khadim Gueye, Dakar, React">
-  <link rel="icon" type="image/jpeg" href="profile-pic.png">
+
+  <!-- SEO Meta Tags -->
+  <title>Khadim4k - Portfolio Développeur Web | Khadim Guèye</title>
+  <meta name="description" content="Bienvenue sur le portfolio officiel de Khadim Guèye (khadim4k), développeur web passionné basé à Dakar, Sénégal. Découvrez mes projets web, mes compétences en HTML, CSS, JavaScript, PHP, et plus.">
+  <meta name="keywords" content="khadim4k, khadim gueye, développeur web sénégalais, portfolio développeur, projets web, Dakar, Sénégal, HTML, CSS, JavaScript, PHP, front-end, développeur front-end, Art digital, Artiste sénégalais, Portfolio tech africain">
+  <meta name="author" content="Khadim Guèye">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://khadim4k.com/">
+
+  <!-- Open Graph Meta Tags (pour Facebook, LinkedIn, etc.) -->
+  <meta property="og:title" content="Khadim4k - Portfolio Développeur Web | Khadim Guèye">
+  <meta property="og:description" content="Découvrez mes projets web, mes compétences en développement et mes créations digitales. Portfolio de Khadim Guèye, développeur web à Dakar.">
+  <meta property="og:image" content="https://khadim4k.com/images/og-portfolio-khadim4k.jpg"> <!-- Crée cette image (1200x630px) -->
+  <meta property="og:url" content="https://khadim4k.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Khadim4k Portfolio">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Khadim4k - Portfolio Développeur Web | Khadim Guèye">
+  <meta name="twitter:description" content="Découvrez mes projets web, mes compétences en développement et mes créations digitales. Portfolio de Khadim Guèye (khadim4k).">
+  <meta name="twitter:image" content="https://khadim4k.com/images/twitter-portfolio-khadim4k.jpg"> <!-- Crée cette image (ratio 2:1, ex: 1200x600px) -->
+  <!-- <meta name="twitter:site" content="@tonPseudoTwitter"> Facultatif: si tu as un compte Twitter pro -->
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="manifest.json">
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <style>
@@ -139,6 +171,17 @@
       border-radius: 10px;
       display: inline-block;
       margin-bottom: 20px;
+      border: none; /* Assurez-vous qu'il n'y a pas de bordure par défaut qui interfère */
+      animation: floatAnimation 4s ease-in-out infinite; /* Animation de flottaison */
+    }
+
+    @keyframes floatAnimation {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px); /* Hauteur de la flottaison */
+      }
       border: none;
     }
     h1.typewriter-text { /* Changé en h1 */
@@ -552,6 +595,19 @@
     #portfolio-tech > p {
       text-align: center;
     }
+
+    /* Styles pour l'animation d'apparition au défilement */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+      will-change: opacity, transform; /* Indication au navigateur pour optimiser */
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
@@ -586,7 +642,7 @@
   <main>
     <section id="hero">
     <div class="image-container">
-      <img src="kg.jpg" alt="Photo de Khadim" />
+      <img src="kg.jpg" alt="Photo de profil de Khadim Guèye, développeur front-end" />
     </div>
 
     <h1 class="typewriter-text"><span id="typed-text"></span></h1>
@@ -609,10 +665,10 @@
     </div>
   </section>
 
-  <section id="competences">
+  <section id="competences" class="reveal-on-scroll">
     <h2>💻 Compétences</h2>
     <div class="competences">
-       <div class="competence-item" title="GitHub">
+       <div class="competence-item reveal-on-scroll" title="GitHub">
         <i class='bx bxl-github competence-icon'></i>
         GitHub
       </div>
@@ -620,67 +676,67 @@
         <i class='bx bx-infinite competence-icon'></i> 
         InfinityFree
       </div>
-       <div class="competence-item" title="HTML">
+       <div class="competence-item reveal-on-scroll" title="HTML">
         <i class='bx bxl-html5 competence-icon'></i>
         HTML
       </div>
-      <div class="competence-item" title="CSS">
+      <div class="competence-item reveal-on-scroll" title="CSS">
         <i class='bx bxl-css3 competence-icon'></i>
         CSS
       </div>
-      <div class="competence-item" title="JavaScript">
+      <div class="competence-item reveal-on-scroll" title="JavaScript">
         <i class='bx bxl-javascript competence-icon'></i>
         JavaScript
       </div>
-          <div class="competence-item" title="Java">
+          <div class="competence-item reveal-on-scroll" title="Java">
         <i class='bx bxl-java competence-icon'></i>
         Java
       </div>
       
-      <div class="competence-item" title="Linux (General)">
+      <div class="competence-item reveal-on-scroll" title="Linux (General)">
         <i class='bx bxl-tux competence-icon'></i> 
         Linux
       </div>
-      <div class="competence-item" title="Kali Linux">
+      <div class="competence-item reveal-on-scroll" title="Kali Linux">
         <i class='bx bxs-terminal competence-icon'></i> <!-- Icône Terminal pour Kali Linux -->
         Kali linux
       </div>
        
-      <div class="competence-item" title="PHP">
+      <div class="competence-item reveal-on-scroll" title="PHP">
         <i class='bx bxl-php competence-icon'></i>
         PHP
       </div>
-      <div class="competence-item" title="MySQL">
+      <div class="competence-item reveal-on-scroll" title="MySQL">
         <i class='bx bxs-data competence-icon'></i> <!-- Icône de base de données pour MySQL -->
         MySQL
       </div>
-      <div class="competence-item" title="Python">
+      <div class="competence-item reveal-on-scroll" title="Python">
         <i class='bx bxl-python competence-icon'></i>
         Python
       </div>
-       <div class="competence-item" title="VS Code">
+       <div class="competence-item reveal-on-scroll" title="VS Code">
         <i class='bx bxl-visual-studio competence-icon'></i> <!-- Icône Visual Studio pour VS Code -->
         VS Code
       </div>
   
-       <div class="competence-item" title="Figma">
+       <div class="competence-item reveal-on-scroll" title="Figma">
         <i class='bx bxl-figma competence-icon'></i>
         Figma
       </div>
-      <div class="competence-item" title="PowerAMC">
+      <div class="competence-item reveal-on-scroll" title="PowerAMC">
         <i class='bx bxs-cog competence-icon'></i> <!-- Icône générique pour PowerAMC -->
         PowerAMC
       </div>
     </div>
   </section>
 
-  <section id="projets">
+  <section id="projets" class="reveal-on-scroll">
     <h2>📂 Mes projets</h2>
     <div class="projets-cards-wrapper">
       <!-- Projet 1: QCM -->
-      <div class="projet-card">
+      <div class="projet-card reveal-on-scroll">
         <a href="https://qcm-sn.ct.ws/index.php" target="_blank" class="projet-card-image-link">
-          <img src="qcm.png" alt="Aperçu du projet site de QCM pour étudiants" />
+          <img src="qcm.png" alt="Aperçu du projet site de QCM pour les étudiants de l'ESTM" />
         </a>
         <div class="projet-card-content">
           <h3>Site de QCM (ESTM)</h3>
@@ -692,22 +748,22 @@
         </div>
       </div>
       <!-- Projet 2: Générateur de Code Couleur -->
-      <div class="projet-card">
+      <div class="projet-card reveal-on-scroll">
         <a href="code_couleur.html" target="_blank" class="projet-card-image-link">
-          <img src="codecol.png" alt="Aperçu du projet générateur de code couleur" />
+          <img src="codecol.png" alt="Aperçu du projet Générateur de Code Couleur en JavaScript" />
         </a>
         <div class="projet-card-content">
           <h3>Générateur de Code Couleur</h3>
           <p>
-            Un outil simple développé en <span class="tech-tag">HTML</span>, <span class="tech-tag">CSS</span> et <span class="tech-tag">JavaScript</span>. Il génère aléatoirement des codes couleurs hexadécimaux et permet de les copier instantanément dans le presse-papiers. Parfait pour trouver l'inspiration rapidement.
+            Un outil simple et fun développé en <span class="tech-tag">HTML</span>, <span class="tech-tag">CSS</span> et <span class="tech-tag">JavaScript</span>. Il génère aléatoirement des codes couleurs hexadécimaux et permet de les copier instantanément dans le presse-papiers. Parfait pour trouver l'inspiration rapidement 
           </p>
           <a href="code_couleur.html" target="_blank" class="btn-projet-card">Voir le projet</a>
         </div>
       </div>
       <!-- Projet 3: Formulaire JavaScript -->
-      <div class="projet-card">
+      <div class="projet-card reveal-on-scroll">
         <a href="formulaire_javascript.html" target="_blank" class="projet-card-image-link">
-          <img src="frs.png" alt="Aperçu du projet formulaire de candidature en JavaScript" />
+          <img src="frs.png" alt="Aperçu du projet Formulaire de candidature dynamique en JavaScript" />
         </a>
         <div class="projet-card-content">
           <h3>Formulaire JavaScript</h3>
@@ -718,9 +774,9 @@
         </div>
       </div>
       <!-- Projet 4: Site Vitrine Pressing -->
-      <div class="projet-card">
+      <div class="projet-card reveal-on-scroll">
         <a href="site_pressing.html" target="_blank" class="projet-card-image-link">
-          <img src="pressing.png" alt="Aperçu du projet site vitrine pour un pressing" />
+          <img src="pressing.png" alt="Aperçu du projet Site vitrine pour un service de pressing" />
         </a>
         <div class="projet-card-content">
           <h3>Site Vitrine Pressing</h3>
@@ -732,7 +788,7 @@
       </div>
     </div>
   </section>
-  <section id="portfolio-tech">
+  <section id="portfolio-tech" class="reveal-on-scroll">
     <h2>🛠️ Réalisation du Portfolio</h2>
     <p>Ce portfolio a été construit avec soin en utilisant les langages et outils suivants :</p>
     <div class="competences">
@@ -765,7 +821,7 @@
     </div>
   </section>
 
-  <section id="contact" class="section">
+  <section id="contact" class="section reveal-on-scroll">
   <h2>Envie de me contacter ?</h2> <!-- Style géré par CSS main section > h2 -->
   <p>N'hésitez pas à m'écrire ou à m'appeler. Je suis disponible et à l'écoute de vos projets !</p>
 
@@ -780,7 +836,7 @@
     </div>
   </div>
 </section>
-<section id="a-propos" class="section" >
+<section id="a-propos" class="section reveal-on-scroll" >
   <h2>À propos de moi</h2> <!-- Style géré par CSS main section > h2 -->
   <p>
     Bienvenue dans mon portfolio,
@@ -801,21 +857,21 @@ Je vous laisse voir par vous-même.
 </section>
 
   
-  <section id="commentaires">
+  <section id="commentaires" class="reveal-on-scroll">
     <h2>💬 Commentaires reçus</h2>
     <div class="commentaires-wrapper">
 
-      <div class="commentaire">
+      <div class="commentaire reveal-on-scroll">
         <div class="profil-pic"><i class='bx bxs-user'></i></div>
         <p>« Ton portfolio est très responsive»</p>
       </div>
 
-      <div class="commentaire">
+      <div class="commentaire reveal-on-scroll">
         <div class="profil-pic"><i class='bx bxs-user'></i></div>
         <p>«J'aime bien !»</p>
       </div>
 
-      <div class="commentaire">
+      <div class="commentaire reveal-on-scroll">
         <div class="profil-pic"><i class='bx bxs-user'></i></div>
         <p>« Intéressant »</p>
       </div>
@@ -841,46 +897,63 @@ Je vous laisse voir par vous-même.
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
-<script>const text = "Je suis Khadim Guèye";
-const typedText = document.getElementById("typed-text");
-let index = 0;
 
-function type() {
-  if (index < text.length) {
-    typedText.innerHTML += text.charAt(index);
-    index++;
-    setTimeout(type, 100);
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // --- Script Typewriter ---
+  const text = "Je suis Khadim Guèye";
+  const typedText = document.getElementById("typed-text");
+  let index = 0;
+
+  function type() {
+    if (typedText && index < text.length) { // Vérifier si typedText existe
+      typedText.innerHTML += text.charAt(index);
+      index++;
+      setTimeout(type, 100);
+    }
   }
-}
+  if (typedText) { // Lancer l'animation seulement si l'élément existe
+    type();
+  }
 
-type();
+  // --- Fermer le menu mobile Bootstrap lorsqu'un lien est cliqué ---
+  const navLinksBootstrap = document.querySelectorAll('#navbarNav .nav-link');
+  const navbarTogglerBootstrap = document.querySelector('.navbar-toggler');
+  const navbarNavBootstrap = document.getElementById('navbarNav'); // Renommé pour clarté
 
-// Suppression de l'ancien script du menu burger personnalisé
-// const menuIcon = document.querySelector('.menu-icon');
-// const navList = document.getElementById('nav-list');
-// ... (ancien code)
-
-
-// Fermer le menu mobile Bootstrap lorsqu'un lien est cliqué (pour les ancres sur la même page)
-const navLinksBootstrap = document.querySelectorAll('#navbarNav .nav-link');
-const navbarTogglerBootstrap = document.querySelector('.navbar-toggler');
-constnavbarNavBootstrap = document.getElementById('navbarNav');
-
-if (navbarNavBootstrap) { // Vérifier si l'élément existe
-  navLinksBootstrap.forEach(link => {
-    link.addEventListener('click', () => {
-      // S'assurer que le menu est bien géré par Bootstrap Collapse
-      const bsCollapseInstance = bootstrap.Collapse.getInstance(navbarNavBootstrap);
-      
-      // On ne ferme que si le menu est effectivement "ouvert" (expanded) et visible sur mobile
-      if (navbarTogglerBootstrap && navbarTogglerBootstrap.getAttribute('aria-expanded') === 'true' && window.getComputedStyle(navbarTogglerBootstrap).display !== 'none') {
-        if (bsCollapseInstance) { // Vérifier si l'instance existe avant d'appeler hide()
-          bsCollapseInstance.hide();
+  if (navbarNavBootstrap) {
+    navLinksBootstrap.forEach(link => {
+      link.addEventListener('click', () => {
+        const bsCollapseInstance = bootstrap.Collapse.getInstance(navbarNavBootstrap);
+        if (navbarTogglerBootstrap && navbarTogglerBootstrap.getAttribute('aria-expanded') === 'true' && window.getComputedStyle(navbarTogglerBootstrap).display !== 'none') {
+          if (bsCollapseInstance) {
+            bsCollapseInstance.hide();
+          }
         }
+      });
+    });
+  }
+
+  // --- Animation d'apparition au défilement ---
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target); // Optionnel: arrêter d'observer une fois visible
       }
     });
+  }, { threshold: 0.1 }); // Se déclenche quand 10% de l'élément est visible
+
+  revealElements.forEach(el => {
+    revealObserver.observe(el);
   });
-}
+});
+</script>
+<script>
+  if (location.hostname === "khadim4k.com") {
+    window.location.href = "https://www.khadim4k.com" + location.pathname;
+  }
 </script>
 </body>
 </html>
