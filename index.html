@@ -9,7 +9,7 @@
   <!-- SEO Meta Tags -->
   <title>Khadim4k - Portfolio Développeur Web | Khadim Guèye</title>
   <meta name="description" content="Bienvenue sur le portfolio officiel de Khadim Guèye (khadim4k), développeur web passionné basé à Dakar, Sénégal. Découvrez mes projets web, mes compétences en HTML, CSS, JavaScript, PHP, et plus.">
-  <meta name="keywords" content="khadim4k, khadim gueye, développeur web sénégalais, portfolio développeur, projets web, Dakar, Sénégal, HTML, CSS, JavaScript, PHP, front-end, développeur front-end, Art digital, Artiste sénégalais, Portfolio tech africain">
+  <meta name="keywords" content="khadim4k, khadim gueye, développeur web sénégalais, portfolio développeur, projets web, Dakar, Sénégal, HTML, CSS, JavaScript, PHP, front-end, développeur full-stack, Art digital, Artiste sénégalais, Portfolio tech africain">
   <meta name="author" content="Khadim Guèye">
   <meta name="robots" content="index, follow">
 
@@ -33,7 +33,7 @@
   <!-- <meta name="twitter:site" content="@tonPseudoTwitter"> Facultatif: si tu as un compte Twitter pro -->
 
   <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="profile-pic.png" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
@@ -41,9 +41,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+ 
   <style>
   :root {
     --color-primary-bg: black;
@@ -182,7 +183,7 @@
       50% {
         transform: translateY(-8px); /* Hauteur de la flottaison */
       }
-      border: none;
+  
     }
     h1.typewriter-text { /* Changé en h1 */
       font-size: 2rem;
@@ -334,7 +335,70 @@
       margin-bottom: 20px;
       text-align: left; /* Description alignée à gauche pour lisibilité */
     }
-
+    /* Styles pour la section Panel EdTech */
+    #panel-edtech {
+      background-color: var(--color-tertiary-bg); /* Fond sombre comme les cartes de projet */
+      border-radius: 15px;
+      padding: 40px 20px;
+      margin: 60px auto; /* Marge pour la séparer des autres sections */
+      max-width: 90%; /* Limiter la largeur sur les grands écrans */
+      box-shadow: 0 0 12px var(--color-accent);
+    }
+    #panel-edtech h2 {
+      color: var(--color-accent); /* Titre en couleur d'accent */
+    }
+    #panel-edtech p {
+      color: var(--color-text-secondary); /* Texte plus doux */
+    }
+    #panel-edtech p strong {
+      color: var(--color-text-primary); /* Noms en blanc pour ressortir */
+    }
+    #panel-edtech .btn-primary { /* Style pour le bouton d'inscription */
+      background-color: var(--color-accent);
+      border-color: var(--color-accent);
+      color: var(--color-text-on-accent);
+    }
+    #panel-edtech .btn-primary:hover {
+      background-color: var(--color-accent-dark-hover);
+      border-color: var(--color-accent-dark-hover);
+    }
+    #panel-edtech img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .panel-slider {
+      overflow: hidden;
+      border-radius: 8px; /* Arrondir les coins du conteneur du slider */
+    }
+    .slides {
+      transition: transform 0.5s ease-in-out; /* Transition plus douce */
+    }
+    .slides > div {
+      flex: 0 0 100%;
+    }
+    .slider-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.5rem; /* Taille de l'icône augmentée */
+      color: white;
+      background-color: rgba(0, 0, 0, 0.4); /* Fond semi-transparent */
+      width: 50px;
+      height: 50px;
+      border-radius: 50%; /* Rendre les boutons circulaires */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      z-index: 5;
+      transition: background-color 0.3s ease;
+    }
+    .slider-control:hover {
+        background-color: rgba(var(--rgb-accent), 0.8); /* Fond couleur accent au survol */
+    }
+    .slider-
     
     /* Commentaires reçus */
     #commentaires {
@@ -642,12 +706,12 @@
   <main>
     <section id="hero">
     <div class="image-container">
-      <img src="kg.jpg" alt="Photo de profil de Khadim Guèye, développeur front-end" />
+      <img src="kg.png" alt="Photo de profil de Khadim Guèye, développeur front-end" />
     </div>
 
     <h1 class="typewriter-text"><span id="typed-text"></span></h1>
 
-    <p class="developer-title">Développeur Front-end Junior</p>
+    <p class="developer-title">Développeur Full-Stack Junior</p>
 
     <!-- Bouton CV ajouté ici -->
     <a href="Cv.khadim.pdf.pdf" target="_blank" rel="noopener" class="cssbuttons-io" style="margin-bottom: 40px;"> <!-- Ajout de margin-bottom pour espacement avant les icônes sociales -->
@@ -714,6 +778,7 @@
         <i class='bx bxl-python competence-icon'></i>
         Python
       </div>
+      
        <div class="competence-item reveal-on-scroll" title="VS Code">
         <i class='bx bxl-visual-studio competence-icon'></i> <!-- Icône Visual Studio pour VS Code -->
         VS Code
@@ -742,7 +807,7 @@
           <h3>Site de QCM (ESTM)</h3>
           <p>
             Projet fil rouge développé en <span class="tech-tag">PHP</span> avec une base de données <span class="tech-tag">MySQL</span>. Ce site de QCM interactif est conçu pour les étudiants de l'ESTM, facilitant leurs révisions et le suivi de leurs progrès. Il est hébergé gratuitement via <span class="tech-tag">InfinityFree</span>, accessible avec le sous-domaine <code>qcm-sn</code> sur le domaine <code>.ct.ws</code>.
-            <br><em>Compte visiteur disponible :</em><br>Email: <code>visit@gmail.com</code><br>Mot de passe: <code>passer123</code>
+            <br><em>Compte visiteur disponible :</em><br>Email: <code>khadim4k@gmail.com</code><br>Mot de passe: <code>passer123</code>
           </p>
           <a href="https://qcm-sn.ct.ws/index.php" target="_blank" class="btn-projet-card">Voir le projet</a>
         </div>
@@ -854,6 +919,34 @@ Par exemple, j’ai conçu un formulaire de recrutement entièrement en JavaScri
 en m’inspirant de celui du Port Autonome de Dakar pour les candidatures spontanées.
 Je vous laisse voir par vous-même.
   </p>
+</section>
+<section id="panel-edtech" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Panel sur l'investissement dans l’EdTech</h2>
+    <p class="text-center lead">
+      Le 30 juin 2025 (15h30‑18h00) à <strong>EtriLabs, Mermoz Pyrotechnique</strong>, j’ai participé à un panel exceptionnel sur « L’EdTech à l’épreuve des investisseurs : traction, impact et modèle solide ».
+    </p>
+    <p class="text-center">
+      Avec :
+      <strong>Mohamed Thiam</strong> (CTO chez Socium),
+      <strong>Papa O. Syr Diagne, MBA</strong> (Managing Partner chez Macapi),
+      <strong>Rasmey CHHUN</strong> (Investment Manager chez I&P).
+    </p>
+    <div class="text-center mb-4">
+      <a href="https://lu.ma/z1uwi1zk" target="_blank" class="btn btn-primary">Inscription gratuite</a>
+    </div>
+
+    <div class="panel-slider position-relative">
+      <div class="slides d-flex">
+        <div><img src="etrilabs1.jpg" alt="Panel EdTech 1"></div>
+        <div><img src="etrilabs2.jpg" alt="Panel EdTech 2"></div>
+        <div><img src="etrilabs3.jpg" alt="Panel EdTech 3"></div>
+        <div><img src="etrilabs4.jpg" alt="Panel EdTech 4"></div>
+      </div>
+      <div class="slider-control left"><i class='bx bx-chevron-left'></i></div>
+      <div class="slider-control right"><i class='bx bx-chevron-right'></i></div>
+    </div>
+  </div>
 </section>
 
   
