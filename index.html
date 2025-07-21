@@ -335,70 +335,6 @@
       margin-bottom: 20px;
       text-align: left; /* Description alignée à gauche pour lisibilité */
     }
-    /* Styles pour la section Panel EdTech */
-    #panel-edtech {
-      background-color: var(--color-tertiary-bg); /* Fond sombre comme les cartes de projet */
-      border-radius: 15px;
-      padding: 40px 20px;
-      margin: 60px auto; /* Marge pour la séparer des autres sections */
-      max-width: 90%; /* Limiter la largeur sur les grands écrans */
-      box-shadow: 0 0 12px var(--color-accent);
-    }
-    #panel-edtech h2 {
-      color: var(--color-accent); /* Titre en couleur d'accent */
-    }
-    #panel-edtech p {
-      color: var(--color-text-secondary); /* Texte plus doux */
-    }
-    #panel-edtech p strong {
-      color: var(--color-text-primary); /* Noms en blanc pour ressortir */
-    }
-    #panel-edtech .btn-primary { /* Style pour le bouton d'inscription */
-      background-color: var(--color-accent);
-      border-color: var(--color-accent);
-      color: var(--color-text-on-accent);
-    }
-    #panel-edtech .btn-primary:hover {
-      background-color: var(--color-accent-dark-hover);
-      border-color: var(--color-accent-dark-hover);
-    }
-    #panel-edtech img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-    .panel-slider {
-      overflow: hidden;
-      border-radius: 8px; /* Arrondir les coins du conteneur du slider */
-    }
-    .slides {
-      transition: transform 0.5s ease-in-out; /* Transition plus douce */
-    }
-    .slides > div {
-      flex: 0 0 100%;
-    }
-    .slider-control {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2.5rem; /* Taille de l'icône augmentée */
-      color: white;
-      background-color: rgba(0, 0, 0, 0.4); /* Fond semi-transparent */
-      width: 50px;
-      height: 50px;
-      border-radius: 50%; /* Rendre les boutons circulaires */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      user-select: none;
-      z-index: 5;
-      transition: background-color 0.3s ease;
-    }
-    .slider-control:hover {
-        background-color: rgba(var(--rgb-accent), 0.8); /* Fond couleur accent au survol */
-    }
-    .slider-
     
     /* Commentaires reçus */
     #commentaires {
@@ -779,6 +715,7 @@
         Python
       </div>
       
+      
        <div class="competence-item reveal-on-scroll" title="VS Code">
         <i class='bx bxl-visual-studio competence-icon'></i> <!-- Icône Visual Studio pour VS Code -->
         VS Code
@@ -919,37 +856,7 @@ Par exemple, j’ai conçu un formulaire de recrutement entièrement en JavaScri
 en m’inspirant de celui du Port Autonome de Dakar pour les candidatures spontanées.
 Je vous laisse voir par vous-même.
   </p>
-</section>
-<section id="panel-edtech" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center mb-4">Panel sur l'investissement dans l’EdTech</h2>
-    <p class="text-center lead">
-      Le 30 juin 2025 (15h30‑18h00) à <strong>EtriLabs, Mermoz Pyrotechnique</strong>, j’ai participé à un panel exceptionnel sur « L’EdTech à l’épreuve des investisseurs : traction, impact et modèle solide ».
-    </p>
-    <p class="text-center">
-      Avec :
-      <strong>Mohamed Thiam</strong> (CTO chez Socium),
-      <strong>Papa O. Syr Diagne, MBA</strong> (Managing Partner chez Macapi),
-      <strong>Rasmey CHHUN</strong> (Investment Manager chez I&P).
-    </p>
-    <div class="text-center mb-4">
-      <a href="https://lu.ma/z1uwi1zk" target="_blank" class="btn btn-primary">Inscription gratuite</a>
-    </div>
 
-    <div class="panel-slider position-relative">
-      <div class="slides d-flex">
-        <div><img src="etrilabs1.jpg" alt="Panel EdTech 1"></div>
-        <div><img src="etrilabs2.jpg" alt="Panel EdTech 2"></div>
-        <div><img src="etrilabs3.jpg" alt="Panel EdTech 3"></div>
-        <div><img src="etrilabs4.jpg" alt="Panel EdTech 4"></div>
-      </div>
-      <div class="slider-control left"><i class='bx bx-chevron-left'></i></div>
-      <div class="slider-control right"><i class='bx bx-chevron-right'></i></div>
-    </div>
-  </div>
-</section>
-
-  
   <section id="commentaires" class="reveal-on-scroll">
     <h2>💬 Commentaires reçus</h2>
     <div class="commentaires-wrapper">
