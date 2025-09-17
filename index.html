@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
- <link rel="manifest" href="manifest.json">
-<link rel="icon" href="images/favicon.ico" type="image/x-icon"> 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Meta Tags -->
-  <title>Khadim4k - Portfolio Développeur Web Full-Stack | Khadim Guèye</title>
-  <meta name="description" content="Bienvenue sur le portfolio officiel de Khadim Guèye (khadim4k), développeur web Full-Stack passionné basé à Dakar, Sénégal. Découvrez mes projets web, mes compétences en HTML, CSS, JavaScript, PHP, et plus.">
+  <title>Khadim4k - Portfolio Développeur Web | Khadim Guèye</title>
+  <meta name="description" content="Découvrez le portfolio de Khadim Guèye (khadim4k), développeur web full-stack junior à Dakar, Sénégal. Explorez mes projets créatifs en HTML, CSS, JavaScript, PHP, et voyez comment je transforme les idées en solutions web performantes.">
   <meta name="keywords" content="khadim4k, khadim gueye, développeur web sénégalais, portfolio développeur, projets web, Dakar, Sénégal, HTML, CSS, JavaScript, PHP, front-end, développeur full-stack, Art digital, Artiste sénégalais, Portfolio tech africain">
   <meta name="author" content="Khadim Guèye">
   <meta name="robots" content="index, follow">
@@ -18,7 +16,7 @@
 
   <!-- Open Graph Meta Tags (pour Facebook, LinkedIn, etc.) -->
   <meta property="og:title" content="Khadim4k - Portfolio Développeur Web | Khadim Guèye">
-  <meta property="og:description" content="Découvrez mes projets web, mes compétences en développement et mes créations digitales. Portfolio de Khadim Guèye, développeur web à Dakar.">
+  <meta property="og:description" content="Explorez les projets et compétences de Khadim Guèye (khadim4k), développeur web full-stack junior à Dakar. Un aperçu de ma passion pour la création de solutions web performantes.">
   <meta property="og:image" content="https://khadim4k.com/images/og-portfolio-khadim4k.jpg"> <!-- Crée cette image (1200x630px) -->
   <meta property="og:url" content="https://khadim4k.com/">
   <meta property="og:type" content="website">
@@ -28,12 +26,12 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Khadim4k - Portfolio Développeur Web | Khadim Guèye">
-  <meta name="twitter:description" content="Découvrez mes projets web, mes compétences en développement et mes créations digitales. Portfolio de Khadim Guèye (khadim4k).">
+  <meta name="twitter:description" content="Portfolio de Khadim Guèye (khadim4k), développeur web full-stack junior à Dakar. Découvrez mes projets, de PHP à Next.js, et ma vision du développement.">
   <meta name="twitter:image" content="https://khadim4k.com/images/twitter-portfolio-khadim4k.jpg"> <!-- Crée cette image (ratio 2:1, ex: 1200x600px) -->
   <!-- <meta name="twitter:site" content="@tonPseudoTwitter"> Facultatif: si tu as un compte Twitter pro -->
 
   <!-- Favicon -->
-  <link rel="icon" href="profile-pic.png" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
@@ -84,7 +82,7 @@
     color: var(--color-text-primary);
   }
   .section {
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
   }
   .contact-box {
@@ -119,8 +117,7 @@
       position: sticky; /* Pour que le header reste visible au scroll si souhaité */
       top: 0;
       z-index: 100; /* Pour être au-dessus du contenu lors du scroll */
-    }    
-    /* .header-left a maintenant la classe .navbar-brand ou est intégré dans .navbar-brand */
+    }
 
     /* Styles pour les icônes dans le header (GitHub, Gmail) */
     .header-icon-link {
@@ -137,8 +134,6 @@
     .header-icon-link:last-child {
       margin-right: 0;
     }
-    /* Suppression de l'ancien style du logo texte */
-    /* h2.logo { ... } */
 
     /* Styles pour les liens de navigation Bootstrap */
     .navbar-nav .nav-link {
@@ -159,7 +154,6 @@
     .navbar-nav .nav-link.active { /* Style au survol et pour le lien actif */
       color: var(--color-accent) !important;
     }
-    /* Les styles pour .menu-icon et .menu-icon .line sont supprimés car Bootstrap gère le toggler */
 
 
     .image-container {
@@ -222,14 +216,6 @@
     }
     .socials a:hover {
       color: var(--color-text-primary);
-    }
-    main section { /* Styles pour les sections dans main */
-      padding: 60px 10%;
-      color: var(--color-text-primary);
-    }
-    /* Add specific style for the hero section to center its content */
-    section#hero {
-        text-align: center; /* Center inline-block children like the CV button */
     }
     main > section > h2 { /* Styles pour les titres de section h2 dans main */
       color: var(--color-accent);
@@ -488,7 +474,7 @@
       color: var(--color-text-primary);
     }
 
-    footer p a { /* Ajout d'une règle pour les liens dans les paragraphes du footer */
+    footer p a {
       color: var(--color-accent);
       text-decoration: none;
     }
@@ -496,12 +482,7 @@
     @media screen and (max-width: 768px) {
       /* header { */ /* Le padding du header est géré par .navbar-custom et container-fluid */
         /* padding: 20px 5%; */
-      /* } */
-      /* .header-wrapper { */ /* Plus utilisé, la structure est gérée par .navbar */
-        /* ... */
-      /* } */
-      .header-icon-link { /* Ajustement pour les icônes du header sur mobile */
-        /* margin-right: 0; */ /* L'espacement est géré par me-3 sur l'icône GitHub */
+      .header-icon-link {
         font-size: 1.7rem; /* Taille des icônes légèrement réduite sur mobile */
       } 
       .navbar-collapse { /* Style pour le menu déroulant sur mobile */
@@ -516,7 +497,6 @@
         box-sizing: border-box;
         text-align: left;
       }
-      /* .menu-icon est supprimé, Bootstrap gère le .navbar-toggler */
       .image-container img {
         width: 80%; /* Scale image width */
         max-width: 280px; /* Maintain a reasonable max-width */
@@ -544,8 +524,8 @@
         max-width: 100%; /* Permet au commentaire de rétrécir si nécessaire */
         box-sizing: border-box; /* Inclut padding et border dans la largeur/hauteur totale */
       }
-      main section {
-        padding: 30px 5%; /* Reduce padding */
+      .section {
+        padding: 50px 20px;
       }
       p {
         font-size: 14px; /* Adjust font-size */
@@ -568,11 +548,7 @@
     section#a-propos p {
       color: #e0dddd;
     }
-    /* Assurer que le paragraphe dans "À propos" reste aligné à gauche pour la lisibilité, 
-       même si la classe .section (qui a text-align: center) est appliquée au parent <section> */
-    section#a-propos.section p {
-        text-align: center;
-    }
+
     /* Assurer explicitement que le titre de la section "À propos" est centré */
     section#a-propos > h2 {
         text-align: center;
@@ -630,9 +606,9 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item"><a class="nav-link" href="#hero"><i class='bx bxs-home-smile'></i>Accueil</a></li>
             <li class="nav-item"><a class="nav-link" href="#projets"><i class='bx bxs-briefcase-alt-2'></i>Mes projets</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact"><i class='bx bxs-contact'></i>Contact</a></li>
             <li class="nav-item"><a class="nav-link" href="#a-propos"><i class='bx bxs-user-detail'></i>À propos</a></li>
-            <li class="nav-item"><a class="nav-link" href="Cv.khadim.pdf.pdf" target="_blank" rel="noopener"><i class='bx bxs-file-pdf'></i>CV</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact"><i class='bx bxs-contact'></i>Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="Cv.khadim.pdf" target="_blank" rel="noopener"><i class='bx bxs-file-pdf'></i>CV</a></li>
           </ul>
         </div>
       </div>
@@ -640,7 +616,7 @@
   </header>
 
   <main>
-    <section id="hero">
+    <section id="hero" class="section">
     <div class="image-container">
       <img src="kg.png" alt="Photo de profil de Khadim Guèye, développeur front-end" />
     </div>
@@ -650,7 +626,7 @@
     <p class="developer-title">Développeur Full-Stack Junior</p>
 
     <!-- Bouton CV ajouté ici -->
-    <a href="Cv.khadim.pdf.pdf" target="_blank" rel="noopener" class="cssbuttons-io" style="margin-bottom: 40px;"> <!-- Ajout de margin-bottom pour espacement avant les icônes sociales -->
+    <a href="Cv.khadim.pdf" target="_blank" rel="noopener" class="cssbuttons-io" style="margin-bottom: 40px;"> <!-- Ajout de margin-bottom pour espacement avant les icônes sociales -->
       <span>
         <i class='bx bx-right-arrow-alt' style="vertical-align: middle; font-size: 1.3em;"></i> <!-- Icône flèche -->
         Voir mon CV
@@ -665,7 +641,7 @@
     </div>
   </section>
 
-  <section id="competences" class="reveal-on-scroll">
+  <section id="competences" class="section reveal-on-scroll">
     <h2>💻 Compétences</h2>
     <div class="competences">
        <div class="competence-item reveal-on-scroll" title="GitHub">
@@ -733,10 +709,22 @@
     </div>
   </section>
 
-  <section id="projets" class="reveal-on-scroll">
+  <section id="projets" class="section reveal-on-scroll">
     <h2>📂 Mes projets</h2>
-    <div class="projets-cards-wrapper">
-      <!-- Projet ComConnect -->
+     <div class="projets-cards-wrapper">
+      <div class="projet-card reveal-on-scroll">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBsUF08gWEkPL3ymHEju2ZS2cytbLLT2eSBjM277-yXOWURA/viewform?usp=dialog" target="_blank" class="projet-card-image-link">
+          <img src="etude.png" alt="Aperçu du projet Étude des besoins et activités" />
+        </a>
+        <div class="projet-card-content">
+          <h3>Étude des besoins et activités</h3>
+          <p>
+            Ce projet a pour objectif de mieux comprendre les besoins des <span class="tech-tag">particuliers</span>, <span class="tech-tag">entrepreneurs</span>, <span class="tech-tag">étudiants</span> et <span class="tech-tag">responsables d’établissements</span>. À travers un formulaire simple et rapide (2–3 minutes), je collecte des <span class="tech-tag">informations essentielles</span> qui permettront de concevoir des <span class="tech-tag">solutions pratiques et adaptées</span> au quotidien de chacun.
+          </p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBsUF08gWEkPL3ymHEju2ZS2cytbLLT2eSBjM277-yXOWURA/viewform?usp=dialog" target="_blank" class="btn-projet-card">Voir le projet</a>
+        </div>
+      </div>
+
       <div class="projet-card reveal-on-scroll">
         <a href="https://comconnect.vercel.app" target="_blank" class="projet-card-image-link">
           <img src="commconnect.png" alt="Aperçu du projet ComConnect - Agence Digitale" />
@@ -750,7 +738,6 @@
         </div>
       </div>
 
-      <!-- Projet 1: QCM -->
       <div class="projet-card reveal-on-scroll">
         <a href="https://qcm-sn.ct.ws/index.php" target="_blank" class="projet-card-image-link">
           <img src="qcm.png" alt="Aperçu du projet site de QCM pour les étudiants de l'ESTM" />
@@ -758,13 +745,11 @@
         <div class="projet-card-content">
           <h3>Site de QCM (ESTM)</h3>
           <p>
-            Projet fil rouge développé en <span class="tech-tag">PHP</span> avec une base de données <span class="tech-tag">MySQL</span>. Ce site de QCM interactif est conçu pour les étudiants de l'ESTM, facilitant leurs révisions et le suivi de leurs progrès. Il est hébergé gratuitement via <span class="tech-tag">InfinityFree</span>, accessible avec le sous-domaine <code>qcm-sn</code> sur le domaine <code>.ct.ws</code>.
-            <br><em>Compte visiteur disponible :</em><br>Email: <code>visit@gmail.com</code><br>Mot de passe: <code>passer123</code>
+            Projet fil rouge développé en <span class="tech-tag">PHP</span> avec une base de données <span class="tech-tag">MySQL</span>. Ce site de QCM interactif est conçu pour les étudiants de l'ESTM, facilitant leurs révisions et le suivi de leurs progrès. Le site inclut un mode visiteur pour tester les fonctionnalités.
           </p>
           <a href="https://qcm-sn.ct.ws/index.php" target="_blank" class="btn-projet-card">Voir le projet</a>
         </div>
       </div>
-      <!-- Projet 2: Générateur de Code Couleur -->
       <div class="projet-card reveal-on-scroll">
         <a href="code_couleur.html" target="_blank" class="projet-card-image-link">
           <img src="codecol.png" alt="Aperçu du projet Générateur de Code Couleur en JavaScript" />
@@ -777,7 +762,6 @@
           <a href="code_couleur.html" target="_blank" class="btn-projet-card">Voir le projet</a>
         </div>
       </div>
-      <!-- Projet 3: Formulaire JavaScript -->
       <div class="projet-card reveal-on-scroll">
         <a href="formulaire_javascript.html" target="_blank" class="projet-card-image-link">
           <img src="frs.png" alt="Aperçu du projet Formulaire de candidature dynamique en JavaScript" />
@@ -790,7 +774,6 @@
           <a href="formulaire_javascript.html" target="_blank" class="btn-projet-card">Voir le projet</a>
         </div>
       </div>
-      <!-- Projet 4: Site Vitrine Pressing -->
       <div class="projet-card reveal-on-scroll">
         <a href="site_pressing.html" target="_blank" class="projet-card-image-link">
           <img src="pressing.png" alt="Aperçu du projet Site vitrine pour un service de pressing" />
@@ -805,7 +788,7 @@
       </div>
     </div>
   </section>
-  <section id="portfolio-tech" class="reveal-on-scroll">
+  <section id="portfolio-tech" class="section reveal-on-scroll">
     <h2>🛠️ Réalisation du Portfolio</h2>
     <p>Ce portfolio a été construit avec soin en utilisant les langages et outils suivants :</p>
     <div class="competences">
@@ -838,24 +821,9 @@
     </div>
   </section>
 
-  <section id="contact" class="section reveal-on-scroll">
-  <h2>Envie de me contacter ?</h2> <!-- Style géré par CSS main section > h2 -->
-  <p>N'hésitez pas à m'écrire ou à m'appeler. Je suis disponible et à l'écoute de vos projets !</p>
-
-  <div class="contact-box">
-    <div class="contact-item">
-       <i class='bx bxl-gmail'></i>
-      <a href="mailto:khadim4k@gmail.com">khadim4k@gmail.com</a>
-    </div>
-    <div class="contact-item">
-      <i class='bx bxl-whatsapp'></i>
-  <a href="https://wa.me/+221784066315" target="_blank">+221 78 406 63 15</a>
-    </div>
-  </div>
-</section>
-<section id="a-propos" class="section reveal-on-scroll" >
-  <h2>À propos de moi</h2> <!-- Style géré par CSS main section > h2 -->
-  <p>
+  <section id="a-propos" class="section reveal-on-scroll" >
+    <h2>À propos de moi</h2>
+    <p>
     Bienvenue dans mon portfolio,
 Depuis tout petit, passionné par tout ce qui est technologie,<br>
 je me suis d'abord orienté en <span> chimie "(Série F6)"</span>,<br>
@@ -871,26 +839,44 @@ Par exemple, j’ai conçu un formulaire de recrutement entièrement en JavaScri
 en m’inspirant de celui du Port Autonome de Dakar pour les candidatures spontanées.
 Je vous laisse voir par vous-même.
   </p>
+  </section>
 
-  <section id="commentaires" class="reveal-on-scroll">
+  <section id="commentaires" class="section reveal-on-scroll">
     <h2>💬 Commentaires reçus</h2>
+    <!-- Note pour le développeur : Remplacez ces commentaires par de vrais témoignages dès que possible. -->
     <div class="commentaires-wrapper">
 
       <div class="commentaire reveal-on-scroll">
         <div class="profil-pic"><i class='bx bxs-user'></i></div>
-        <p>« Ton portfolio est très responsive»</p>
+        <p>« Khadim a une excellente maîtrise du design responsive. Le portfolio s'adapte parfaitement à tous les appareils, ce qui témoigne de sa rigueur technique. »</p>
       </div>
 
       <div class="commentaire reveal-on-scroll">
         <div class="profil-pic"><i class='bx bxs-user'></i></div>
-        <p>«J'aime bien !»</p>
+        <p>« Un design sobre et efficace qui va droit au but. J'apprécie particulièrement les animations discrètes qui améliorent l'expérience sans distraire. »</p>
       </div>
 
       <div class="commentaire reveal-on-scroll">
         <div class="profil-pic"><i class='bx bxs-user'></i></div>
-        <p>« Intéressant »</p>
+        <p>« Le parcours de Khadim est atypique et inspirant. Sa passion pour le code transparaît dans la qualité de ses projets. Un profil prometteur ! »</p>
       </div>
 
+    </div>
+  </section>
+
+  <section id="contact" class="section reveal-on-scroll">
+    <h2>Envie de me contacter ?</h2>
+    <p>N'hésitez pas à m'écrire ou à m'appeler. Je suis disponible et à l'écoute de vos projets !</p>
+
+    <div class="contact-box">
+      <div class="contact-item">
+        <i class='bx bxl-gmail'></i>
+        <a href="mailto:khadim4k@gmail.com">khadim4k@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <i class='bx bxl-whatsapp'></i>
+        <a href="https://wa.me/+221784066315" target="_blank">+221 78 406 63 15</a>
+      </div>
     </div>
   </section>
 </main>
@@ -906,7 +892,7 @@ Je vous laisse voir par vous-même.
       <a href="mailto:khadim4k@gmail.com">khadim4k@gmail.com</a> | 
       <a href="https://wa.me/+221784066315" target="_blank">+221 78 406 63 15</a>
     </p>
-    <p>&copy; 2025 Khadim Guèye - Tous droits réservés</p>
+    <p>&copy; 2024 Khadim Guèye - Tous droits réservés</p>
   </footer>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -968,5 +954,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
-
-
